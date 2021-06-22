@@ -1,0 +1,12 @@
+.fotografsec {
+  width: 100%;
+  border: 1px dashed #dddfe1;
+  background: #f2f4fa !important;
+  padding: 16px;
+}
+.fotografsec::-webkit-file-upload-button {
+  display: none;
+}
+.fotografsec::before {
+  display: none;
+}

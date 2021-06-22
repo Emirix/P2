@@ -1,0 +1,51 @@
+<?php
+// Anasayfa
+$lang["anasayfa"] = "Homepage";
+$lang["anasayfa_hero1"] = "customer problems";
+$lang["anasayfa_hero2"] = "check tickets";
+$lang["kontrol_et_cevapla"] = "Tüm Yardım Taleplerini Kontrol Et ve Cevapla";
+$lang["obs"] = "Onay bekleyen olan siparişler";
+$lang["bos"] = "Beklemede olan siparişler";
+$lang["is"] = "İşlemdeki siparişler";
+$lang["syc"] = "Siparişler yola çıktı";
+$lang["bsi"] = "Bu siparişler iptal";
+$lang["tes"] = "Teslim edilen siparişler";
+$lang["stb"] = "Sistemdeki toplam borçlar";
+$lang["ohs"] = "Oluşturulan hesap sayısı";
+$lang["stu"] = "Sistemdeki toplam ürünler";
+$lang["onay_bekleyen"] = "Onay Bekleyen";
+$lang["beklemede"] = "Beklemede";
+$lang["hazırlanıyor"] = "Hazırlanıyor";
+$lang["kargoda"] = "Kargoda";
+$lang["iptal_edildi"] = "İptal Edildi";
+$lang["tamamlandı"] = "Tamamlandı";
+$lang["toplamborc"] = "Toplam Borç";
+$lang["toplam_hesap"] = "Toplam Hesap";
+$lang["toplam_urunler"] = "Toplam Ürünler";
+$lang["logout"] = "Çıkış Yap";
+
+// NAVBAR
+$lang["site_adi"] = "Site adı";
+$lang["hesap_yonetimi"] = "Hesap Yönetimi";
+$lang["hesap_olustur"] = "Hesap Oluştur";
+$lang["tum_hesaplar"] = "Tüm Hesaplar";
+$lang["urun_yonetimi"] = "Ürün Yönetimi";
+$lang["urun_ekle"] = "Ürün Ekle";
+$lang["eklenen_urunler"] = "Eklenen Ürünler";
+$lang["urun_liste"] = "Ürün Liste";
+$lang["siparis_takip"] = "Sipariş Takip";
+$lang["islemdeki_siparisler"] = "İşlemdeki Siparişler";
+$lang["tum_siparisler"] = "Tüm Siparişler";
+$lang["Borç Kayıtları"] = "Borç Kayıtları";
+$lang["borc_sil"] = "Borç Sil";
+$lang["destek"] = "Destek";
+$lang["tum_talepler"] = "Tüm talepler";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
+$lang[""] = "";
