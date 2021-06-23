@@ -87,7 +87,7 @@
                             <i class="fa fa-hourglass-end"></i>
                         </div>
                         <div class="media-body">
-                            <h6 class="mb-1"><?php echo $this->lang->line("urun_siparisedildi") ?></h6>
+                            <h6 class="mb-1"><?php echo $this->lang->line("urun_siparisedildi"); ?></h6>
                             <small class="d-block"><?php echo $this->lang->line("urun_id") ?>: <?php echo $bildirim["urun"] ?></small>
                             <small class="d-block"><?php echo $bildirim["tarih"] ?></small>
                         </div>

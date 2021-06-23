@@ -1,5 +1,8 @@
 <?php
 
+if($urun[0]["kategori"] != "urun-topper"){
+    die("Bu topper ürünü değil!");
+}
 
 ?>
 
@@ -227,210 +230,8 @@
 												<p>Marka: <span class="item"><?php echo $urun[0]["marka"] ?> </span></p>
 
 												<p>Ürün açıklaması: <span class="item"><?php echo $urun[0]["aciklama"] ?></span></p>
-												<div class="filtaring-area mb-3">
-													<?php
-													if ($urun[0]["kategori"] != "urun-matras") {
-													?>
-														<hr>
-														<p>Yatak boyutu: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
-															<span>
-																<div class="btn-group">
-																	<button id="yatakboyuttitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																		Lütfen seçim yapınız.
-																	</button>
-																	<div class="dropdown-menu" id="yatakboyutdown">
-																		<div class="dropdown-item" data-yatakboyut="120x200"><span class="badge badge-primary light">+€</span> 120x200</div>
-																		<div class="dropdown-item" data-yatakboyut="120x210"><span class="badge badge-primary light">+€75</span> 120x210</div>
-																		<div class="dropdown-item" data-yatakboyut="120x220"><span class="badge badge-primary light">+€125</span> 120x220</div>
-																		<div class="dropdown-item" data-yatakboyut="140x200"><span class="badge badge-primary light">+€</span> 140x200</div>
-																		<div class="dropdown-item" data-yatakboyut="140x210"><span class="badge badge-primary light">+€75</span> 140x210</div>
-																		<div class="dropdown-item" data-yatakboyut="140x220"><span class="badge badge-primary light">+€125</span> 140x220</div>
-																		<div class="dropdown-item" data-yatakboyut="160x200"><span class="badge badge-primary light">+€</span> 160x200</div>
-																		<div class="dropdown-item" data-yatakboyut="160x210"><span class="badge badge-primary light">+€75</span> 160x210</div>
-																		<div class="dropdown-item" data-yatakboyut="160x220"><span class="badge badge-primary light">+€125</span> 160x220</div>
-																		<div class="dropdown-item" data-yatakboyut="180x200"><span class="badge badge-primary light">+€</span> 180x200</div>
-																		<div class="dropdown-item" data-yatakboyut="180x210"><span class="badge badge-primary light">+€75</span> 180x210</div>
-																		<div class="dropdown-item" data-yatakboyut="180x220"><span class="badge badge-primary light">+€125</span> 180x220</div>
-																		<div class="dropdown-item" data-yatakboyut="200x200"><span class="badge badge-primary light">+€175</span> 200x200</div>
-																		<div class="dropdown-item" data-yatakboyut="200x210"><span class="badge badge-primary light">+€225</span> 200x210</div>
-																		<div class="dropdown-item" data-yatakboyut="200x220"><span class="badge badge-primary light">+€275</span> 200x220</div>
-																	</div>
-																</div>
-															</span>
-														</p>
-														<hr>
-													<?php } ?>
-													<p>Kumaş seçimi: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
-														<span>
-															<div class="btn-group">
-																<button id="kumastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																	Lütfen seçim yapınız.
-																</button>
-																<div class="dropdown-menu" id="kumasdown">
-																	<div class="dropdown-item" data-kumas="Amsterdam">Amsterdam</div>
-																	<div class="dropdown-item" data-kumas="Verona">Verona</div>
-																	<div class="dropdown-item" data-kumas="Riviera">Riviera</div>
-																	<div class="dropdown-item" data-kumas="Bravo">Bravo</div>
-																</div>
-															</div>
-														</span>
-													</p>
-													<div class="size-filter">
-														<p>Kumaş renk kodu: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span></p>
-														<div class="input-group mb-3 input-success-o">
-															<textarea id="val-renk" type="text" class="col-lg-6 col-xxl-6 col-xl-3 form-control" placeholder="Lütfen renk seçiminizi buraya yazınız." style="min-height: 30px;"></textarea>
-														</div>
-													</div>
-													<hr>
-												</div>
-												<div class="col-12 px-0">
-													<p>Matras: 
-													<?php if($urun[0]["kategori"] == "urun-matras" ) {?>
-														<span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
-													<?php }?>
-														<span>
-															<div class="btn-group">
-																<button id="matrastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																	Lütfen seçim yapınız.
-																</button>
-																<div class="dropdown-menu" id="matrasdown">
-
-																	<?php
-																	if ($urun[0]["kategori"] == "urun-normal") {
-																	?>
-																		<a data-matras="Polyether Matras" class="dropdown-item" data-fiyat="">Polyether Matras</a>
-																		<a data-matras="Pocket Poly Matras" class="dropdown-item" data-fiyat="">Pocket Poly Matras</a>
-																		<a data-matras="Pocket HR Matras" class="dropdown-item" data-fiyat="">Pocket HR Matras</a>
-																		<a data-matras="HR Matras" class="dropdown-item" data-fiyat="">HR Matras</a>
-																		<a data-matras="Pocket HR 2x5" class="dropdown-item" data-fiyat="">Pocket HR 2x5</a>
-																	<?php } ?>
-
-																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Pocket HR 2x5") {
-																		foreach ($pocketHr25 as $matras) {
-																			$f = explode("€", $matras["matras"]);
-																	?>
-																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																				<span class="badge badge-primary light">+<?php
-
-																															echo $f[1];
-																															?>€</span>
-																				&nbsp; <?php echo $matras["matras"] ?>
-																			</a>
-																	<?php }
-																	} ?>
-
-
-																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Polyether Matras") {
-																		foreach ($polyetherMatras as $matras) {
-																			$f = explode("€", $matras["matras"]);
-																	?>
-																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																				<span class="badge badge-primary light">+<?php
-
-																															echo $f[1];
-																															?>€</span>
-																				&nbsp; <?php echo $matras["matras"] ?>
-																			</a>
-																	<?php }
-																	} ?>
-
-
-																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Pocket Poly Matras") {
-																		foreach ($pocketPolyMatras as $matras) {
-																			$f = explode("€", $matras["matras"]);
-																	?>
-																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																				<span class="badge badge-primary light">+<?php
-
-																															echo $f[1];
-																															?>€</span>
-																				&nbsp; <?php echo $matras["matras"] ?>
-																			</a>
-																	<?php }
-																	} ?>
-
-																	<!-- -->
-
-
-
-																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Pocket HR Matras") {
-																		foreach ($pocketHrMatras as $matras) {
-																			$f = explode("€", $matras["matras"]);
-																	?>
-																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																				<span class="badge badge-primary light">+<?php
-
-																															echo $f[1];
-																															?>€</span>
-																				&nbsp; <?php echo $matras["matras"] ?>
-																			</a>
-																	<?php }
-																	} ?>
-
-
-
-
-																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "HR Matras") {
-																		foreach ($hrMatras as $matras) {
-																			$f = explode("€", $matras["matras"]);
-																	?>
-																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																				<span class="badge badge-primary light">+<?php
-
-																															echo $f[1];
-																															?>€</span>
-																				&nbsp; <?php echo $matras["matras"] ?>
-																			</a>
-																	<?php }
-																	} ?>
-
-
-
-																</div>
-															</div>
-														</span><br>
-														<label class="mt-2 mb-0">
-															<input type="checkbox" id="xx31">
-															<span>Matras kumaşlı olacaksa lütfen tıklayın <span class="badge badge-sm light badge-primary">+€50</span></span>
-														</label>
-													</p>
-
-													
-
-													<?php
-													if ($urun[0]["kategori"] == "urun-normal") { ?>
-													
-														<span id="smc" class="badge badge-sm light badge-success mt-0 mb-3">Seçilen: <span id="secilen-matras" ></span> </span>
-														
-													<?php } ?>
-													<span id="lsc" class="badge badge-sm light badge-danger mt-0 mb-3">Lütfen seçim yapınız.</span>
-
-
-
-													<?php
-													if ($urun[0]["kategori"] != "urun-matras") {
-													?>
-														<p>Parça adet:
-															<span>
-																<div class="btn-group">
-																	<button id="parcatitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																		1 adet
-																	</button>
-																	<div class="dropdown-menu" id="parcadown">
-																		<a class="dropdown-item">1 parça</a>
-																		<a class="dropdown-item">2 parça</a>
-																	</div>
-																</div>
-															</span><br>
-														</p>
-														<hr>
-													<?php } ?>
-
-
-													<?php
-													if ($urun[0]["kategori"] != "urun-matras") {
-													?>
-														<p>Topper:
+                                                <hr/> 
+                                                <p>Topper: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
 															<span>
 																<div class="btn-group">
 																	<button id="toppertitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -486,79 +287,10 @@
 																</div>
 															</span>
 														</p>
-
-														<hr>
-														<p>Voeteinde:
-															<span>
-																<div class="btn-group">
-																	<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																		Lütfen seçim yapınız.
-																	</button>
-																	<div class="dropdown-menu" id="vod">
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="225" type="checkbox" value="Dekenkist 125cm breed (+€225)">&nbsp;
-																				<span class="badge badge-primary light">+€225</span>
-																				&nbsp; Dekenkist 125cm breed
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="305" type="checkbox" value="Dekenkist breedte bed (+€305)">&nbsp;
-																				<span class="badge badge-primary light">+€305</span>
-																				&nbsp; Dekenkist breedte bed
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="205" type="checkbox" value="Voetenbank 125cm breed (+€205)">&nbsp;
-																				<span class="badge badge-primary light">+€205</span>
-																				&nbsp; Voetenbank 125cm breed
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="225" type="checkbox" value="Voetenbank breedte bed (+€225)">&nbsp;
-																				<span class="badge badge-primary light">+€225</span>
-																				&nbsp; Voetenbank breedte bed
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="525" type="checkbox" value="TV-lift vlak (+€525)">&nbsp;
-																				<span class="badge badge-primary light">+€525</span>
-																				&nbsp; TV-lift vlak
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="625" type="checkbox" value="TV-lift patroon (+€625)">&nbsp;
-																				<span class="badge badge-primary light">+€625</span>
-																				&nbsp; TV-lift patroon
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="180" type="checkbox" value="Voetbord Vlak (+€180)">&nbsp;
-																				<span class="badge badge-primary light">+€180</span>
-																				&nbsp; Voetbord Vlak
-																			</div>
-																		</label>
-																		<label class="w-100">
-																			<div class="dropdown-item">
-																				<input data-fiyat="305" type="checkbox" value="Voetbord Patroon (+€305)">&nbsp;
-																				<span class="badge badge-primary light">+€305</span>
-																				&nbsp; Voetbord Patroon
-																			</div>
-																		</label>
-																	</div>
-																</div>
-															</span>
-														</p> <?php } ?>
-													<hr>
-												</div>
-
-												<div class="col-12 px-0">
+											
+												
+                                                        <hr/> 
+                                                <div class="col-12 px-0">
 													<p>Ürün adet seçimi: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
 														<span>
 															<div class="btn-group">
@@ -591,7 +323,7 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									<form action="<?php echo base_url("shopmanager/yorumekle/0"); ?>" method="post">
+									<form action="<?php echo base_url("shopmanager/yorumekle/1"); ?>" method="post">
 										<div class="text-center mb-4">
 											<img class="img-fluid rounded" width="78" src="<?php echo base_url("assets/pp/" . $user[0]["foto"]) ?>">
 										</div>
@@ -787,107 +519,31 @@
 			return (fiyat + parseInt(e1) + parseInt(e2) + parseInt(e3) + parseInt(e4) + parseInt(e5) + parseInt(e8))
 		}
 
-		$("#smc").hide();
+
 		var yatakBoyut = 0;
-		var boyutFiyat = 0;
-		var boyut2 = "0";
 		var parca = 1;
 		var matras = "";
-
-		
 
 
 		$("#yatakboyutdown .dropdown-item").click(function() {
 			$("#yatakboyuttitle").text($(this).text())
 			yatakBoyut = $(this).text()
 
-			boyutFiyat = $("#yatakboyuttitle").text().replace("+€", "").split(" ")[0]
-			boyut2 = $("#yatakboyuttitle").text().split(" ")[1]
-
-			console.log(`Fiyat: ${boyutFiyat}`)
-			console.log(`Boyut Size: ${boyut2}`)
+			console.log($("#yatakboyuttitle").text().replace("+€", "").split(" ")[0])
 			e8 = $("#yatakboyuttitle").text().replace("+€", "").split(" ")[0]
 			$("#fiyat").text(topla())
 
-			$.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
-                const matraslar = [JSON.parse(data)];
-					
-				console.log(matraslar)
-				if(matraslar[0].length == 0){
-					$("#smc").hide();
-					$("#lsc").show();
-					
-				}else{
-					$("#smc").show();
-					$("#lsc").hide();
-				}
-				var selectedMatras = "";
 
-				matraslar[0].map(function(val){
-					if(val.matras.includes(boyut2)){
-						console.log("BULDUM BROOO")
-						
-						if(parca == 1){
-							$("#secilen-matras").text(val.matras)
-						}
-
-						if(parca == 2){
-							$("#secilen-matras").text(
-							(parseInt(val.matras.split("x")[0]) / 2).toString()
-							+"x"+val.matras.split(" ")[0].split("x")[1] + " €"+
-							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
-							
-							)
-						}
-						
-					}
-				})
-
-            })
 
 		})
 
 		$("#parcadown .dropdown-item").click(function() {
 			$("#parcatitle").text($(this).text())
-			parca = parseInt($(this).text().split(" ")[0])
-			console.log(parca)
+			parca = $(this).text()
+
 			if (parseInt(parca) == 1) {
 				console.log("1 PARÇA SEÇİLİ");
 			}
-
-			$.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
-                const matraslar = [JSON.parse(data)];
-				console.log(matraslar)
-				if(matraslar[0].length == 0){
-					$("#smc").hide();
-					$("#lsc").show();
-					
-				}else{
-					$("#smc").show();
-					$("#lsc").hide();
-				}
-				var selectedMatras = "";
-
-				matraslar[0].map(function(val){
-					if(val.matras.includes(boyut2)){
-						console.log("BULDUM BROOO")
-						if(parca == 1){
-							$("#secilen-matras").text(val.matras)
-						}
-
-						if(parca == 2){
-							$("#secilen-matras").text(
-							(parseInt(val.matras.split("x")[0]) / 2).toString()
-							+"x"+val.matras.split(" ")[0].split("x")[1] + " €"+
-							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
-							
-							)
-						}
-						
-					}
-				})
-
-            })
 		})
 
 
@@ -904,7 +560,6 @@
 
 
 		const urun = {}
-		var matrasListe = [];
 
 		$("#kumasdown div").click(function() {
 			kumasSecim = true
@@ -912,7 +567,7 @@
 			urun.kumastitle = $(this).attr("data-kumas");
 
 		})
- 
+
 		$("#matrasdown a").click(function() {
 			matrasSecim = true;
 			$("#matrastitle").text($(this).attr("data-matras"))
@@ -921,45 +576,6 @@
 			$("#fiyat").text(topla())
 			matras = $(this).attr("data-matras");
 
-			
-            $.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
-                const matraslar = [JSON.parse(data)];
-				console.log(matraslar)
-				if(boyut2 == "0"){
-					return
-				}
-				if(matraslar[0].length == 0){
-					$("#smc").hide();
-					$("#lsc").show();
-					
-				}else{
-					$("#smc").show();
-					$("#lsc").hide();
-				}
-
-			
-				var selectedMatras = "";
-
-				matraslar[0].map(function(val){
-					if(val.matras.includes(boyut2)){
-						console.log("BULDUM BROOO")
-						if(parca == 1){
-							$("#secilen-matras").text(val.matras)
-						}
-
-						if(parca == 2){
-							$("#secilen-matras").text(
-							(parseInt(val.matras.split("x")[0]) / 2).toString()
-							+"x"+val.matras.split(" ")[0].split("x")[1] + " €"+
-							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
-							
-							)
-						}
-						
-					}
-				})
-
-            })
 		})
 
 		$("#topperdown a").click(function() {
@@ -1051,11 +667,7 @@
 				return;
 			}
 
-			if (!kumasSecim || $("#val-renk").val() == "" || $("#val-renk").val() == " ") {
-				alert("Renk seçimi yapınız");
-				return;
-			}
-
+		
 
 
 			var form = new FormData();

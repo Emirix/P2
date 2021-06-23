@@ -256,7 +256,7 @@
 									<div class="card-header border-0 pb-0">
 										<div class="mr-auto">
 											<h4 class="fs-15 w-100 mb-0">ÖDENECEK TUTAR</h4>
-											<h4 class="text-black fs-20">€ <?php echo $sepet->total() ?></h4>
+											<h4 class="text-black fs-20">€ <?php echo (($sepet->total() / 100) * 21) +  $sepet->total()  ?></h4>
 										</div>
 									</div>
                                     <div class="card-body pt-0 pb-0">
@@ -265,7 +265,7 @@
                                     <div class="card-body pt-0 pb-3">
 										<ul class="m-md-auto mt-2 pr-4">
 											<li class="mb-2 text-nowrap"><i class="las la-truck text-primary scale5 mr-3"></i><span class="fs-14 text-black text-nowrap font-w500">Kargo: Ücretsiz</span></li>
-											<li class="mb-2 text-nowrap"><i class="las la-money-bill-wave-alt text-success scale5 mr-3"></i><span class="fs-14 text-black  font-w500">Toplam: €<?php echo $sepet->total() ?></span></li>
+											<li class="mb-2 text-nowrap"><i class="las la-money-bill-wave-alt text-success scale5 mr-3"></i><span class="fs-14 text-black  font-w500">Toplam: € <?php echo $sepet->total() ?></span></li>
                                             <li class="mb-2 text-nowrap"><i class="las la-plus-circle text-info scale5 mr-3"></i><span class="fs-14 text-black  font-w500">KDV'li Toplam: €<?php echo (($sepet->total() / 100) * 21) +  $sepet->total()  ?></span></li>
 											<li class="mb-2 text-nowrap"><i class="las la-archive text-warning scale5 mr-3"></i><span class="fs-14 text-black  font-w500">Toplam adet: <?php echo $sepet->total_items() ?></span></li>
                                         </ul>

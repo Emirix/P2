@@ -245,7 +245,15 @@
                                     <div class="row m-b-30">
                                         <div class="col-md-5 col-xxl-12">
                                             <div class="new-arrival-product mb-4 mb-xxl-4 mb-md-0">
-                                                <a href="<?php echo base_url("shopmanager/productdetail/".$urun["id"]) ?>">
+                                                <a href="<?php 
+
+                                                    if($urun["kategori"] == "urun-topper")
+                                                    {
+                                                        echo base_url("shopmanager/topper/".$urun["id"]);
+                                                    }else{
+                                                        echo base_url("shopmanager/productdetail/".$urun["id"]);
+                                                    }
+                                                ?>">
                                                     <div class="new-arrivals-img-contnent">
                                                         <img class="img-fluid" src="<?php echo base_url($kapak) ?>" alt="">
                                                     </div>
@@ -365,8 +373,11 @@
         <script src="<?php echo base_url("assets/shop/vendor/bootstrap-select/dist/js/bootstrap-select.min.js") ?> "></script>
         <script src="<?php echo base_url("assets/shop/js/custom.min.js") ?> "></script>
         <script src="<?php echo base_url("assets/shop/js/deznav-init.js") ?> "></script>
-        <script src="<?php echo base_url("assets/shop/vendor/highlightjs/highlight.pack.min.js") ?> "></script>
+        <script src="<?php echo base_url("assets/shop/vendor/ highlightjs/highlight.pack.min.js") ?> "></script>
         <script src="<?php echo base_url("assets/shop/vendor/star-rating/jquery.star-rating-svg.js") ?> "></script>
+       
+        
+        
         <script>
             $("li.star").click(function(){
                 $("#star").val($(this).attr("data-value"))

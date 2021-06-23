@@ -1,7 +1,7 @@
     <?php
 
 
-    class Shopmanager extends CI_Controller {
+    class Shopmanager extends MyController {
 
 
         var $bildirimler;
@@ -327,7 +327,7 @@
         }
 
         public function productdetail($id){
-    ;
+   
 
             $urun = $this->db->where("id",$id);
             $urun = $this->db->get("urunler")->result_array();
@@ -411,6 +411,89 @@
                 "pocketHrMatras"=>$pocketHrMatras,
                 "hrMatras"=>$hrMatras,
                 "pocketHr25"=>$pocketHr25,
+                "polyetherTopper"=>$polyetherTopper,
+                "nasaTopper"=>$nasaTopper,
+                "hrTopper"=>$hrTopper,
+                "yildiz3"=>$yildiz3 ,
+                "yildiz2"=>$yildiz2 ,
+                "yildiz1"=>$yildiz1, 
+                "yildiz4"=>$yildiz4 ,
+                "yildiz5"=>$yildiz5 ,
+                "yildizvarmi"=>$yildizyok
+            ]);
+        }
+
+
+
+        public function topper($id){
+   
+
+            $urun = $this->db->where("id",$id);
+            $urun = $this->db->get("urunler")->result_array();
+
+            $yorumlar = $this->db->where("to_id",$id);
+            $yorumlar = $this->db->get("yorumlar")->result_array();
+
+          
+
+
+            $polyetherTopper = $this->db->where("type","Polyether Topper");
+            $polyetherTopper = $this->db->get("topper")->result_array();
+
+            $nasaTopper  = $this->db->where("type","Nasa Topper");
+            $nasaTopper  = $this->db->get("topper")->result_array();
+
+            $hrTopper  = $this->db->where("type","HR Topper");
+            $hrTopper  = $this->db->get("topper")->result_array();
+
+      
+
+           
+
+            $yildiz = $this->db->where("to_id",$id);
+            $yildiz = $this->db->get("yorumlar")->result_array();
+
+            $yildiz3 = [];
+            $yildiz2 = [];
+            $yildiz1 = [];
+            $yildiz4 = [];
+            $yildiz5 = [];
+            $yildizyok = false;
+            foreach($yildiz as $key=>$y){
+                if($y["yildiz"]=="3"){
+                    array_push($yildiz3,$y["yildiz"]);
+                }
+
+                if($y["yildiz"]=="2"){
+                    array_push($yildiz2,$y["yildiz"]);
+                }
+
+                if($y["yildiz"]=="1"){
+                    array_push($yildiz1,$y["yildiz"]);
+                }
+                if($y["yildiz"]=="4"){
+                    array_push($yildiz4,$y["yildiz"]);
+                }
+                if($y["yildiz"]=="5"){
+                    array_push($yildiz5,$y["yildiz"]);
+                }
+            }
+
+            if((count($yildiz1) + count($yildiz2) + count($yildiz3) + count($yildiz4) + count($yildiz5)) == 0){
+                $yildizyok = true;
+            }
+
+           
+        
+            
+            $this->load->view('ShopManager/topper-detay',[
+                "bildirimler"=>$this->bildirimler,
+                "user"=>$this->user,
+                "urun"=>$urun,
+                "id"=>$id,
+                "yorumlar"=>$yorumlar,
+                "sepet"=>$this->cart,
+         
                 "polyetherTopper"=>$polyetherTopper,
                 "nasaTopper"=>$nasaTopper,
                 "hrTopper"=>$hrTopper,
@@ -764,7 +847,7 @@
 
         }
 
-        function yorumekle(){
+        function yorumekle($x){
 
             $aldiklari = explode("yawhe",$this->user[0]["aldiklari"]);
             $aldimi ="";
@@ -772,8 +855,9 @@
                 $aldimi ="aldi";
             }else{
                 $aldimi ="almadi";
-
             }
+
+            
 
             
             $this->db->insert("yorumlar",[
@@ -786,8 +870,12 @@
                 "fotograf"=>$_POST["foto"]
 
             ]);
+            if($x == 1){
+                header("Location: ".base_url("/shopmanager/topper/".$_POST["back"]));
+            }else {
+                header("Location: ".base_url("/shopmanager/productdetail/".$_POST["back"]));
 
-            header("Location: ".base_url("/shopmanager/productdetail/".$_POST["back"]));
+            }
 
         }
 
@@ -884,7 +972,7 @@
                         "fiyat"=>$item["subtotal"],
                         "orj_fiyat"=>$fiyat,
                         "iptal"=>$iptalTarihi,
-                        
+                        "kdvsiz_fiyat"=>$this->cart->total(),
                         "marka"   => $item["marka"],
                         "topper"=>$item["topper"],
                         "kumasli_mi"=>$item["kumasli_mi"],
@@ -968,6 +1056,17 @@
             $this->db->update("siparisler");
 
             header("Location: ".base_url("shopmanager/orders"));
+        }
+
+
+
+        function getmatras(){
+            $matras =$this->db->where("type",$_GET["matras"]);
+            $matras =$this->db->get("matras")->result_array();
+
+            echo json_encode(
+                $matras
+            );
         }
 
        

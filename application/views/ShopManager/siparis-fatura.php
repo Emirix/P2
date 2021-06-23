@@ -210,7 +210,7 @@
                                                 <td class="left strong"><?php echo $urun[0]["ad"]?></td>
                                                 <td class="left"><?php echo $urun[0]["aciklama"]?></td>
                                                 <td class="center"><?php echo $order[0]["adet"]?></td>
-                                                <td class="right">€<?php echo $order[0]["orj_fiyat"]?></td>
+                                                <td class="right">€<?php echo $order[0]["kdvsiz_fiyat"]?></td>
                                             </tr>
                                             <tr>
                                                 <td>#2</td>
@@ -229,7 +229,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="left"><strong>Ürün tutarı</strong></td>
-                                                    <td class="right"><?php echo $order[0]["orj_fiyat"]?>€</td>
+                                                    <td class="right"><?php echo $order[0]["kdvsiz_fiyat"]?>€</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left"><strong>Hizmet bedeli</strong></td>
@@ -246,14 +246,14 @@
                                                 <?php } ?>
                                                 <tr>
                                                     <td class="left"><strong class="cblack">Toplam</strong></td>
-                                                    <td class="right"><strong class="cblack">€<?php echo $order[0]["orj_fiyat"]?></strong>
+                                                    <td class="right"><strong class="cblack">€<?php echo $order[0]["kdvsiz_fiyat"]?></strong>
                                                 </tr>
                                                 <?php
                                                     
                                                     if($alan[0]["kdv"] == "var"){ ?>
                                                 <tr>
                                                     <td class="left"><strong class="cblack">(KDV) Toplam</strong></td>
-                                                    <td class="right"><strong class="cblack"><span>€</span> <?php echo ($order[0]["orj_fiyat"] / 100) * 21  ?></strong>
+                                                    <td class="right"><strong class="cblack"><span>€</span> <?php echo $order[0]["orj_fiyat"]?></strong>
                                                 </tr>
                                                 <?php }  ?>
 

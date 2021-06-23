@@ -1,3 +1,10 @@
+<?php
+$type = "";
+if($urun[0]["kategori"] == "urun-topper"){
+	$type="topper";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -200,7 +207,7 @@ if($urun[0]["bekleme"] == "true"){
 												<p>İstenilen Adet: <span class="item"><?php echo $order[0]["adet"] ?></span></p>
 												<p>Ürün açıklaması: <span class="item"><?php echo nl2br($urun[0]["aciklama"]) ?></span></p>
 												<div class="filtaring-area mb-3">
-												<?php if($urun[0]["kategori"] != "urun-matras") { ?>
+												<?php if($urun[0]["kategori"] != "urun-matras" && $urun[0]["kategori"] != "urun-topper" ) { ?>
 													<hr>
                                                     <div class="size-filter">
 														<p>Yatak boyutu:</p>
@@ -208,10 +215,11 @@ if($urun[0]["bekleme"] == "true"){
 															<input type="text" value="" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen yatak boyutu" disabled="disabled">
                                         				</div>
                                                     </div>
-													<hr>
+												
 
 													<?php } ?>
 													<hr/>
+													<?php if($type != "topper"){ ?>
                                                     <div class="size-filter">
 														<p>Kumaş markası:</p>
 														<div class="input-group mb-3 input-success-o">
@@ -249,15 +257,21 @@ if($urun[0]["bekleme"] == "true"){
 																<input type="text" value="" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen parça adeti" disabled="disabled">
 															</div>
 														</div>
-													<hr>
+														<?php } ?>
+														<hr>
+														<?php } ?>
+												
                                                     <div class="size-filter">
 														<p>Seçilen Topper:</p>
 														<div class="input-group mb-3 input-success-o">
 															<input value="<?php if($order[0]["topper"] != "undefined"){ echo $order[0]["topper"]; }else{ echo "Seçim yapılmadı"; } ?>"  type="text" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Topper (örn. 60x100)" disabled="disabled">
                                         				</div>
                                                     </div>
-													<hr>
-
+												
+												    
+													<?php
+														if($type != "topper") { ?> 
+													
                                                     <div class="size-filter">
 														<p>Seçilen Voeteinde:</p>
 														<?php 
@@ -273,8 +287,8 @@ if($urun[0]["bekleme"] == "true"){
 														?>
 								
 														
-													</div>
-													<?php } ?>
+													</div><?php } ?>
+													
 													
                                                 </div>
 												<?php
