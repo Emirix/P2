@@ -686,6 +686,8 @@ if($urun[0]["kategori"] != "urun-topper"){
 			form.append("topper", urun.topper);
 			form.append("kumaslimi", $("#xx31").prop('checked'));
 			form.append("vods", vods);
+			form.append("kategori", "urun-topper");
+			form.append("topper_boyut", $("#toppertitle").text());
 
 			$.ajax({
 				type: "POST",

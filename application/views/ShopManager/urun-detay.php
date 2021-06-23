@@ -239,16 +239,16 @@
 																		Lütfen seçim yapınız.
 																	</button>
 																	<div class="dropdown-menu" id="yatakboyutdown">
-																		<div class="dropdown-item" data-yatakboyut="120x200"><span class="badge badge-primary light">+€</span> 120x200</div>
+																		<div class="dropdown-item" data-yatakboyut="120x200"><span class="badge badge-primary light">+€0</span> 120x200</div>
 																		<div class="dropdown-item" data-yatakboyut="120x210"><span class="badge badge-primary light">+€75</span> 120x210</div>
 																		<div class="dropdown-item" data-yatakboyut="120x220"><span class="badge badge-primary light">+€125</span> 120x220</div>
-																		<div class="dropdown-item" data-yatakboyut="140x200"><span class="badge badge-primary light">+€</span> 140x200</div>
+																		<div class="dropdown-item" data-yatakboyut="140x200"><span class="badge badge-primary light">+€0</span> 140x200</div>
 																		<div class="dropdown-item" data-yatakboyut="140x210"><span class="badge badge-primary light">+€75</span> 140x210</div>
 																		<div class="dropdown-item" data-yatakboyut="140x220"><span class="badge badge-primary light">+€125</span> 140x220</div>
-																		<div class="dropdown-item" data-yatakboyut="160x200"><span class="badge badge-primary light">+€</span> 160x200</div>
+																		<div class="dropdown-item" data-yatakboyut="160x200"><span class="badge badge-primary light">+€0</span> 160x200</div>
 																		<div class="dropdown-item" data-yatakboyut="160x210"><span class="badge badge-primary light">+€75</span> 160x210</div>
 																		<div class="dropdown-item" data-yatakboyut="160x220"><span class="badge badge-primary light">+€125</span> 160x220</div>
-																		<div class="dropdown-item" data-yatakboyut="180x200"><span class="badge badge-primary light">+€</span> 180x200</div>
+																		<div class="dropdown-item" data-yatakboyut="180x200"><span class="badge badge-primary light">+€0</span> 180x200</div>
 																		<div class="dropdown-item" data-yatakboyut="180x210"><span class="badge badge-primary light">+€75</span> 180x210</div>
 																		<div class="dropdown-item" data-yatakboyut="180x220"><span class="badge badge-primary light">+€125</span> 180x220</div>
 																		<div class="dropdown-item" data-yatakboyut="200x200"><span class="badge badge-primary light">+€175</span> 200x200</div>
@@ -263,15 +263,14 @@
 													<p>Kumaş seçimi: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
 														<span>
 															<div class="btn-group">
-																<button id="kumastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																	Lütfen seçim yapınız.
-																</button>
+																<button id="kumastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Varsayılan</button>
 																<div class="dropdown-menu" id="kumasdown">
-																	<div class="dropdown-item" data-kumas="Amsterdam">Amsterdam</div>
-																	<div class="dropdown-item" data-kumas="Verona">Verona</div>
-																	<div class="dropdown-item" data-kumas="Riviera">Riviera</div>
-																	<div class="dropdown-item" data-kumas="Bravo">Bravo</div>
-																</div>
+																	<div class="dropdown-item" data-kumas="Varsayılan" data-fiyat="0"><span class="badge badge-primary light">+€0</span> Varsayılan</div>
+																	<div class="dropdown-item" data-kumas="Amsterdam" data-fiyat="0"><span class="badge badge-primary light">+€0</span> Amsterdam</div>
+																	<div class="dropdown-item" data-kumas="Verona" data-fiyat="0"><span class="badge badge-primary light">+€0</span> Verona</div>
+																	<div class="dropdown-item" data-kumas="Riviera" data-fiyat="75"><span class="badge badge-primary light">+€75</span> Riviera</div>
+																	<div class="dropdown-item" data-kumas="Bravo" data-fiyat="75"><span class="badge badge-primary light">+€75</span> Bravo</div>
+                									</div>
 															</div>
 														</span>
 													</p>
@@ -401,10 +400,10 @@
 													if ($urun[0]["kategori"] == "urun-normal") { ?>
 													
 														<span id="smc" class="badge badge-sm light badge-success mt-0 mb-3">Seçilen: <span id="secilen-matras" ></span> </span>
-														
-													<?php } ?>
-													<span id="lsc" class="badge badge-sm light badge-danger mt-0 mb-3">Lütfen seçim yapınız.</span>
+														<span id="lsc" class="badge badge-sm light badge-danger mt-0 mb-3">Lütfen seçim yapınız.</span>
 
+													<?php } ?>
+													
 
 
 													<?php
@@ -438,54 +437,28 @@
 																	</button>
 																	<div class="dropdown-menu" id="topperdown">
 
+																	<?php
+																	if ($urun[0]["kategori"] == "urun-normal") {
+																	?>
+																		<a data-matras="Polyether Topper" class="dropdown-item" data-fiyat="">Polyether Topper</a>
+																		<a data-matras="HR Topper" class="dropdown-item" data-fiyat="">HR Topper</a>
+																		<a data-matras="Nasa Topper" class="dropdown-item" data-fiyat="">Nasa Topper</a>
+																		
 
-																		<?php if ($urun[0]["topper"] == "Polyether Topper") {
-																			foreach ($polyetherTopper as $matras) {
-																				$f = explode("€", $matras["topper"]);
-																		?>
-																				<a data-matras="<?php echo $matras["topper"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																					<span class="badge badge-primary light">+<?php
-
-																																echo $f[1];
-																																?>€</span>
-																					&nbsp; <?php echo $matras["topper"] ?>
-																				</a>
-																		<?php }
-																		} ?>
-
-
-																		<?php if ($urun[0]["topper"] == "Nasa Topper") {
-																			foreach ($nasaTopper as $matras) {
-																				$f = explode("€", $matras["topper"]);
-																		?>
-																				<a data-matras="<?php echo $matras["topper"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																					<span class="badge badge-primary light">+<?php
-
-																																echo $f[1];
-																																?>€</span>
-																					&nbsp; <?php echo $matras["topper"] ?>
-																				</a>
-																		<?php }
-																		} ?>
-
-																		<?php if ($urun[0]["topper"] == "HR Topper") {
-																			foreach ($hrTopper as $matras) {
-																				$f = explode("€", $matras["topper"]);
-																		?>
-																				<a data-matras="<?php echo $matras["topper"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
-																					<span class="badge badge-primary light">+<?php
-
-																																echo $f[1];
-																																?>€</span>
-																					&nbsp; <?php echo $matras["topper"] ?>
-																				</a>
-																		<?php }
-																		} ?>
-
+																		<?php } ?>
 																	</div>
 																</div>
 															</span>
 														</p>
+
+														<?php
+													if ($urun[0]["kategori"] == "urun-normal") { ?>
+													
+														<span id="smc2" class="badge badge-sm light badge-success mt-0 mb-0">Seçilen: <span id="secilen-topper" ></span> </span>
+														<span id="lsc3" class="badge badge-sm light badge-danger mt-0 mb-0">Lütfen seçim yapınız.</span>
+
+													<?php } ?>
+													
 
 														<hr>
 														<p>Voeteinde:
@@ -771,10 +744,8 @@
 	<script src="<?php echo base_url("assets/shop/vendor/select2/js/select2.full.min.js") ?> "></script>
 	<script src="<?php echo base_url("assets/shop/js/plugins-init/select2-init.js") ?> "></script>
 
-
-
-	<script>
-		var fiyat = <?php echo $urun[0]["fiyat"]; ?>;
+<script>
+	var fiyat = <?php echo $urun[0]["fiyat"]; ?>;
 		var e1 = 0;
 		var e2 = 0;
 		var e3 = 0;
@@ -782,15 +753,41 @@
 		var e5 = 0;
 		var e7 = 1;
 		var e8 = 0;
+		var e9 = 0;
+		var e10 = 0;
+		var e11 = 0;
+		var ys = <?php if($urun[0]["kategori"] == "urun-matras" || $urun[0]["kategori"] == "urun-normal") {
+			echo "true";
+		}else{
+			"false";
+		} ?>;
+
 
 		function topla() {
-			return (fiyat + parseInt(e1) + parseInt(e2) + parseInt(e3) + parseInt(e4) + parseInt(e5) + parseInt(e8))
+			return (fiyat + parseInt(e11) + parseInt(e1) + parseInt(e2) + parseInt(e3) + parseInt(e4) + parseInt(e5) + parseInt(e8) + parseInt(e9) + parseInt(e10))
 		}
 
+</script>
+	<?php if($urun[0]["kategori"] == "urun-matras") { ?> 													
+    <script>
+
+	
+	$("#matrasdown a").click(function(){
+	
+		e11 = $(this).attr("data-fiyat");
+		$("#fiyat").text(topla())
+	})
+	
+	</script>
+	<?php } ?>
+	<script>
+	
 		$("#smc").hide();
+		$("#smc2").hide();
 		var yatakBoyut = 0;
 		var boyutFiyat = 0;
 		var boyut2 = "0";
+		var boyut3 = "0";
 		var parca = 1;
 		var matras = "";
 
@@ -808,11 +805,41 @@
 			console.log(`Boyut Size: ${boyut2}`)
 			e8 = $("#yatakboyuttitle").text().replace("+€", "").split(" ")[0]
 			$("#fiyat").text(topla())
+			ys = true;
+
+			$.get("<?php echo base_url("shopmanager/gettopper?topper=") ?>"+urun.topper,function(data){
+				console.log(JSON.parse(data))
+				const topperlar = [JSON.parse(data)];
+				if(boyut2 == "0"){
+					return
+				}
+				if(topperlar[0].length == 0){
+					$("#smc2").hide();
+					$("#lsc3").show();
+					
+				}else{
+					$("#smc2").show();
+					$("#lsc3").hide();
+				}
+				topperlar[0].map(function(val){
+					if(val.topper.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						console.log(val.topper);
+						secilenTopper = val.topper;
+						$("#secilen-topper").text(secilenTopper)
+						
+						
+					}
+				})
+
+			})
 
 			$.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
                 const matraslar = [JSON.parse(data)];
-					
 				console.log(matraslar)
+				if(boyut2 == "0"){
+					return
+				}
 				if(matraslar[0].length == 0){
 					$("#smc").hide();
 					$("#lsc").show();
@@ -821,14 +848,20 @@
 					$("#smc").show();
 					$("#lsc").hide();
 				}
+
+			
 				var selectedMatras = "";
+
+				
 
 				matraslar[0].map(function(val){
 					if(val.matras.includes(boyut2)){
 						console.log("BULDUM BROOO")
-						
 						if(parca == 1){
 							$("#secilen-matras").text(val.matras)
+							console.log("MATRAS FİYAT : " + val.matras.split("€")[1] )
+							e10 = val.matras.split("€")[1];
+							$("#fiyat").text(topla())
 						}
 
 						if(parca == 2){
@@ -838,12 +871,18 @@
 							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
 							
 							)
+
+							e10 = val.matras.split("€")[1] * 2;
+							$("#fiyat").text(topla())
 						}
 						
 					}
 				})
 
             })
+
+
+			
 
 		})
 
@@ -851,13 +890,22 @@
 			$("#parcatitle").text($(this).text())
 			parca = parseInt($(this).text().split(" ")[0])
 			console.log(parca)
+			if(boyut2 == "0"){
+					return
+				}
 			if (parseInt(parca) == 1) {
 				console.log("1 PARÇA SEÇİLİ");
 			}
 
+
+			
+
 			$.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
                 const matraslar = [JSON.parse(data)];
 				console.log(matraslar)
+				if(boyut2 == "0"){
+					return
+				}
 				if(matraslar[0].length == 0){
 					$("#smc").hide();
 					$("#lsc").show();
@@ -866,13 +914,20 @@
 					$("#smc").show();
 					$("#lsc").hide();
 				}
+
+			
 				var selectedMatras = "";
+
+				
 
 				matraslar[0].map(function(val){
 					if(val.matras.includes(boyut2)){
 						console.log("BULDUM BROOO")
 						if(parca == 1){
 							$("#secilen-matras").text(val.matras)
+							console.log("MATRAS FİYAT : " + val.matras.split("€")[1] )
+							e10 = val.matras.split("€")[1];
+							$("#fiyat").text(topla())
 						}
 
 						if(parca == 2){
@@ -882,12 +937,16 @@
 							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
 							
 							)
+
+							e10 = val.matras.split("€")[1] * 2;
+							$("#fiyat").text(topla())
 						}
 						
 					}
 				})
 
             })
+
 		})
 
 
@@ -900,9 +959,8 @@
 		var kumasSecim = false;
 		var matrasSecim = false;
 		var topperSecim = false;
-
-
-
+		var secilenTopper;
+	
 		const urun = {}
 		var matrasListe = [];
 
@@ -910,6 +968,10 @@
 			kumasSecim = true
 			$("#kumastitle").text($(this).attr("data-kumas"))
 			urun.kumastitle = $(this).attr("data-kumas");
+			console.log($(this).attr("data-fiyat"))
+			e9 = $(this).attr("data-fiyat");
+			$("#fiyat").text(topla())
+			
 
 		})
  
@@ -917,10 +979,9 @@
 			matrasSecim = true;
 			$("#matrastitle").text($(this).attr("data-matras"))
 			urun.matras = $(this).attr("data-matras");
-			e1 = $(this).attr("data-fiyat")
-			$("#fiyat").text(topla())
+			
 			matras = $(this).attr("data-matras");
-
+	
 			
             $.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
                 const matraslar = [JSON.parse(data)];
@@ -940,11 +1001,16 @@
 			
 				var selectedMatras = "";
 
+				
+
 				matraslar[0].map(function(val){
 					if(val.matras.includes(boyut2)){
 						console.log("BULDUM BROOO")
 						if(parca == 1){
 							$("#secilen-matras").text(val.matras)
+							console.log("MATRAS FİYAT : " + val.matras.split("€")[1] )
+							e10 = val.matras.split("€")[1];
+							$("#fiyat").text(topla())
 						}
 
 						if(parca == 2){
@@ -954,6 +1020,9 @@
 							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
 							
 							)
+
+							e10 = val.matras.split("€")[1] * 2;
+							$("#fiyat").text(topla())
 						}
 						
 					}
@@ -969,8 +1038,33 @@
 			$("#toppertitle").text($(this).attr("data-matras"))
 			urun.topper = $(this).attr("data-matras");
 
-			e2 = $(this).attr("data-fiyat")
-			$("#fiyat").text(topla())
+
+			$.get("<?php echo base_url("shopmanager/gettopper?topper=") ?>"+urun.topper,function(data){
+				console.log(JSON.parse(data))
+				const topperlar = [JSON.parse(data)];
+				if(boyut2 == "0"){
+					return
+				}
+				if(topperlar[0].length == 0){
+					$("#smc2").hide();
+					$("#lsc3").show();
+					
+				}else{
+					$("#smc2").show();
+					$("#lsc3").hide();
+				}
+				topperlar[0].map(function(val){
+					if(val.topper.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						console.log(val.topper);
+						secilenTopper = val.topper;
+						$("#secilen-topper").text(secilenTopper)
+						
+						
+					}
+				})
+
+			})
 
 		})
 
@@ -1044,6 +1138,13 @@
 			urun.marka = "<?php echo $urun[0]["marka"]; ?>";
 			urun.yorum = "<?php echo count($yorumlar); ?>";
 			urun.kumasRenkKodu = $("#val-renk").val()
+			urun.yatakboyutu = $("#yatakboyuttitle").text()
+
+
+			if (ys == false) {
+				alert("Boyut seçimi yapınız");
+				return;
+			}
 
 
 			if (urun.adet === null || urun.adet === undefined) {
@@ -1051,10 +1152,13 @@
 				return;
 			}
 
-			if (!kumasSecim || $("#val-renk").val() == "" || $("#val-renk").val() == " ") {
+			if($("#kumastitle").text() != "Varsayılan"){
+				if (!kumasSecim || $("#val-renk").val() == "" || $("#val-renk").val() == " ") {
 				alert("Renk seçimi yapınız");
 				return;
 			}
+			}
+			
 
 
 
@@ -1074,6 +1178,12 @@
 			form.append("topper", urun.topper);
 			form.append("kumaslimi", $("#xx31").prop('checked'));
 			form.append("vods", vods);
+			form.append("yatakboyut", boyut2);
+			form.append("parca",parca);
+			form.append("matras_boyut",$("#secilen-matras").text());
+			form.append("topper_boyut",$("#secilen-topper").text());
+			form.append("kategori","<?php echo $urun[0]["kategori"] ?>");
+
 
 			$.ajax({
 				type: "POST",

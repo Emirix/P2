@@ -215,7 +215,9 @@
                                                 </h6>
 												<div class="d-flex mt-0 mb-0">
                                                     <div class="fs-13 cblack sepet_urunbilgi">Ürün Markası: <span class="text-orange"><?php echo $item["marka"] ?></span></div>&nbsp;
-                                                    <div class="fs-13 cblack sepet_urunbilgi">Renk: <span class="text-primary"><?php echo $item["options"]["Renk"] ?></span></div>&nbsp;
+                                                    <?php if($item["options"]["Renk"] != "undefined") {
+                                                        echo '                                                    <div class="fs-13 cblack sepet_urunbilgi">Renk: <span class="text-primary">'. $item["options"]["Renk"] .'</span></div>&nbsp;';
+                                                    } ?>
                                                     <div class="fs-13 cblack sepet_urunbilgi">Adet: <span class="text-success"><?php echo $item["qty"] ?></span></div>
                                                 </div>
                                                 <p class="fs-14 mt-0 mb-0 urun-kisa-aciklama"><?php  echo $item["aciklama"] ?></p>

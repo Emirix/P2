@@ -212,7 +212,7 @@ if($urun[0]["bekleme"] == "true"){
                                                     <div class="size-filter">
 														<p>Yatak boyutu:</p>
 														<div class="input-group mb-3 input-success-o">
-															<input type="text" value="" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen yatak boyutu" disabled="disabled">
+															<input type="text" value="<?php echo $order[0]["yatak_boyutu"] ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen yatak boyutu" disabled="disabled">
                                         				</div>
                                                     </div>
 												
@@ -236,7 +236,16 @@ if($urun[0]["bekleme"] == "true"){
                                                     <div class="size-filter">
 														<p>Seçilen Matras:</p>
 														<div class="input-group mb-1 input-success-o">
-															<input type="text"  value="<?php if($order[0]["matras"] != "undefined"){ echo $order[0]["matras"]; }else{ echo "Seçim yapılmadı"; } ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Matras (örn. 60x100)" disabled="disabled">
+															<input type="text"  value="<?php
+															if($order[0]["matras"] != "undefined"){
+																if($order[0]["kategori"]!= "urun-matras"){
+																	echo $order[0]["matras"]." ( ".$order[0]["matras_boyut"]." ) ";
+																}else{
+																	echo $order[0]["matras"];
+
+																}
+																	
+															} ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Matras (örn. 60x100)" disabled="disabled">
                                         				</div>
 														<?php
 
@@ -254,17 +263,26 @@ if($urun[0]["bekleme"] == "true"){
 														<div class="size-filter">
 															<p>Matras parça adet:</p>
 															<div class="input-group mb-3 input-success-o">
-																<input type="text" value="" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen parça adeti" disabled="disabled">
+																<input type="text" value="<?php echo $order[0]["parca"] ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen parça adeti" disabled="disabled">
 															</div>
 														</div>
 														<?php } ?>
 														<hr>
 														<?php } ?>
-												
+													
+													<?php if($order[0]["kategori"] == "urun-topper" || $order[0]["kategori"] == "urun-normal" )  { ?>
                                                     <div class="size-filter">
 														<p>Seçilen Topper:</p>
 														<div class="input-group mb-3 input-success-o">
-															<input value="<?php if($order[0]["topper"] != "undefined"){ echo $order[0]["topper"]; }else{ echo "Seçim yapılmadı"; } ?>"  type="text" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Topper (örn. 60x100)" disabled="disabled">
+															<input value="<?php if($order[0]["topper"] != "undefined"){
+																if($order[0]["kategori"]!= "urun-topper"){
+																	echo $order[0]["topper"]." ( ".$order[0]["topper_boyut"]." ) ";
+																}else{
+																	echo $order[0]["topper"];
+
+																}
+																
+																}else{ echo "Seçim yapılmadı"; } ?>"  type="text" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Topper (örn. 60x100)" disabled="disabled">
                                         				</div>
                                                     </div>
 												
@@ -288,13 +306,12 @@ if($urun[0]["bekleme"] == "true"){
 								
 														
 													</div><?php } ?>
-													
+													<?php } ?>
 													
                                                 </div>
 												<?php
 													// KDV VAR İSE ÇIKIYOR FATURA .)
 												if($user[0]["kdv"] == "var"){ ?>
-												<hr>
 													<div class="col-12 px-0">
 													<span><a href="<?php echo base_url("shopmanager/bill/".$id."/".$urunId) ?>">
 														<div class="btn-group">

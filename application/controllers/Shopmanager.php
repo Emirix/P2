@@ -901,7 +901,12 @@
                 "topper"=>$_POST["topper"],
                 "kumasli_mi"=>$_POST["kumaslimi"],
                 "kumastitle"=>$_POST["kumastitle"],
+                "yatak_boyutu"=>$_POST["yatakboyut"],
+                "parca"=>$_POST["parca"],
                 "vods"=>$_POST["vods"],
+                "matras_boyut"=>$_POST["matras_boyut"],
+                "topper_boyut"=>$_POST["topper_boyut"],
+                "kategori"=>$_POST["kategori"],
 
 
 
@@ -978,6 +983,12 @@
                         "kumasli_mi"=>$item["kumasli_mi"],
                         "kumastitle"=>$item["kumastitle"],
                         "vods"=>$item["vods"],
+                        "yatak_boyutu"=>$item["yatak_boyutu"],
+                        "parca"=>$item["parca"],
+                        "topper_boyut"=>$item["topper_boyut"],
+                        "matras_boyut"=>$item["matras_boyut"],
+                        "kategori"=>$item["kategori"],
+                        
                         
         
                     ]);
@@ -1063,6 +1074,16 @@
         function getmatras(){
             $matras =$this->db->where("type",$_GET["matras"]);
             $matras =$this->db->get("matras")->result_array();
+
+            echo json_encode(
+                $matras
+            );
+        }
+
+        
+        function gettopper(){
+            $matras =$this->db->where("type",$_GET["topper"]);
+            $matras =$this->db->get("topper")->result_array();
 
             echo json_encode(
                 $matras
