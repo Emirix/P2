@@ -1,3 +1,10 @@
+<?php
+$type = "";
+if($urun[0]["kategori"] == "urun-topper"){
+	$type="topper";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -165,31 +172,31 @@
 														echo '<span class="item text-secondary">Kargo</span>';
 													}
 													?>
-													<!--<span class="item text-danger">İptal Edildi</span>
-													<span class="item text-black">Kargo Yolda</span>
-													<span class="item text-success">Tamamlandı</span>
-													<span class="item text-primary">Hazırlanıyor</span> -->
-                                                </p>
-                                                <p>Ürün kodu: <span class="item"><?php echo $urun[0]["urun_kodu"] ?></span> </p>
-												<?php
+													    											<p> <?php
 
 if($urun[0]["bekleme"] == "true"){
-	echo "<p>Bekleme süresi: <span class='item text-success'>".$urun[0]["bekleme_suresi"]."</span></p>";
+	echo "Bekleme süresi: <span class='item text-success'>".$urun[0]["bekleme_suresi"]."</span>";
 }
 
-?>
-												<p>Marka: <span class="item"><?php echo $urun[0]["marka"] ?></span></p>
+?></p>
+                                                <p>Ürün kodu: <span class="item"><?php echo $urun[0]["urun_kodu"] ?></span> </p>
+                                            	<p>Marka: <span class="item"><?php echo $urun[0]["marka"] ?></span></p>
 												<p>İstenilen Adet: <span class="item"><?php echo $order[0]["adet"] ?></span></p>
 												<p>Ürün açıklaması: <span class="item"><?php echo nl2br($urun[0]["aciklama"]) ?></span></p>
 												<div class="filtaring-area mb-3">
+												<?php if($urun[0]["kategori"] != "urun-matras" && $urun[0]["kategori"] != "urun-topper" ) { ?>
 													<hr>
                                                     <div class="size-filter">
 														<p>Yatak boyutu:</p>
 														<div class="input-group mb-3 input-success-o">
-															<input type="text" value="" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen yatak boyutu" disabled="disabled">
+															<input type="text" value="<?php echo $order[0]["yatak_boyutu"] ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen yatak boyutu" disabled="disabled">
                                         				</div>
                                                     </div>
-													<hr>
+												
+
+													<?php } ?>
+													<hr/>
+													<?php if($type != "topper"){ ?>
                                                     <div class="size-filter">
 														<p>Kumaş markası:</p>
 														<div class="input-group mb-3 input-success-o">
@@ -206,7 +213,16 @@ if($urun[0]["bekleme"] == "true"){
                                                     <div class="size-filter">
 														<p>Seçilen Matras:</p>
 														<div class="input-group mb-1 input-success-o">
-															<input type="text"  value="<?php if($order[0]["matras"] != "undefined"){ echo $order[0]["matras"]; }else{ echo "Seçim yapılmadı"; } ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Matras (örn. 60x100)" disabled="disabled">
+															<input type="text"  value="<?php
+															if($order[0]["matras"] != "undefined"){
+																if($order[0]["kategori"]!= "urun-matras"){
+																	echo $order[0]["matras"]." ( ".$order[0]["matras_boyut"]." ) ";
+																}else{
+																	echo $order[0]["matras"];
+
+																}
+																	
+															} ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Matras (örn. 60x100)" disabled="disabled">
                                         				</div>
 														<?php
 
@@ -215,21 +231,42 @@ if($urun[0]["bekleme"] == "true"){
 															}
 
 														?>
+
+
+                                                    </div>
+
+													
+													<?php if($urun[0]["kategori"] != "urun-matras"){?> 
 														<div class="size-filter">
 															<p>Matras parça adet:</p>
 															<div class="input-group mb-3 input-success-o">
-																<input type="text" value="" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen parça adeti" disabled="disabled">
+																<input type="text" value="<?php echo $order[0]["parca"] ?>" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen parça adeti" disabled="disabled">
 															</div>
 														</div>
-                                                    </div>
-													<hr>
+														<?php } ?>
+														<hr>
+														<?php } ?>
+													
+													<?php if($order[0]["kategori"] == "urun-topper" || $order[0]["kategori"] == "urun-normal" )  { ?>
                                                     <div class="size-filter">
 														<p>Seçilen Topper:</p>
 														<div class="input-group mb-3 input-success-o">
-															<input value="<?php if($order[0]["topper"] != "undefined"){ echo $order[0]["topper"]; }else{ echo "Seçim yapılmadı"; } ?>"  type="text" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Topper (örn. 60x100)" disabled="disabled">
+															<input value="<?php if($order[0]["topper"] != "undefined"){
+																if($order[0]["kategori"]!= "urun-topper"){
+																	echo $order[0]["topper"]." ( ".$order[0]["topper_boyut"]." ) ";
+																}else{
+																	echo $order[0]["topper"];
+
+																}
+																
+																}else{ echo "Seçim yapılmadı"; } ?>"  type="text" class="col-xl-6 col-lg-12 col-md-12 col-xxl-8 col-sm-12 yukseklik40 form-control input-default input-kapali" placeholder="Seçilen Topper (örn. 60x100)" disabled="disabled">
                                         				</div>
                                                     </div>
-													<hr>
+												
+												    
+													<?php
+														if($type != "topper") { ?> 
+													
                                                     <div class="size-filter">
 														<p>Seçilen Voeteinde:</p>
 														<?php 
@@ -243,23 +280,28 @@ if($urun[0]["bekleme"] == "true"){
 															<?php }
 
 														?>
+								
 														
-                                                       
-                                                    
-                                                        <!-- voeteinde eğer birden fazla seçtiyse inputlar ona göre fazla olacak yani tüm veotiende seçenekleri 1 inputta yazmayacak!!! -->
-														
-													</div>
-													<hr>
+													</div><?php } ?>
+													<?php } ?>
+													
                                                 </div>
-												<div class="col-12 px-0">
- 													<span><a href="<?php echo base_url("admin/siparisfatura/".$id."/".$urunId) ?>">
-														 <div class="btn-group">
-															<button class="btn btn-primary btn-sm" type="button">
-																Siparişin faturası için tıklayınız
-															</button>	
-														</div>
-													</a></span>
-												</div>
+												<?php
+													// KDV VAR İSE ÇIKIYOR FATURA .)
+												if($user[0]["kdv"] == "var"){ ?>
+													<div class="col-12 px-0">
+													<span><a href="<?php echo base_url("admin/bill/".$id."/".$urunId) ?>">
+														<div class="btn-group">
+														   <button class="btn btn-primary btn-sm" type="button">
+															   Siparişin faturası için tıklayınız
+														   </button>	
+													   </div>
+												   </a></span>
+											   </div>
+												<?php }
+
+												?>
+
                                             </div>
                                         </div>
                                     </div>

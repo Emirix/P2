@@ -1,58 +1,62 @@
+<?php
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>panel</title>
-    <!-- Favicon icon -->
-	<link href="<?php  echo base_url("assets/shop/vendor/lightgallery/css/lightgallery.min.css") ?> " rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php  echo base_url("assets/shop/images/panel.ico")?>">
-	<link href="<?php  echo base_url("assets/shop/vendor/bootstrap-select/dist/css/bootstrap-select.min.css") ?> " rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="<?php  echo base_url("assets/shop/vendor/star-rating/star-rating-svg.css") ?> ">
-	<link rel="stylesheet" href="<?php  echo base_url("assets/shop/vendor/select2/css/select2.min.css") ?> ">
-    <link href="<?php  echo base_url("assets/shop/css/style.css") ?> " rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>panel</title>
+
+	<link href="<?php echo base_url("assets/shop/vendor/lightgallery/css/lightgallery.min.css") ?> " rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url("assets/shop/images/panel.ico") ?>">
+	<link href="<?php echo base_url("assets/shop/vendor/bootstrap-select/dist/css/bootstrap-select.min.css") ?> " rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/shop/vendor/star-rating/star-rating-svg.css") ?> ">
+	<link rel="stylesheet" href="<?php echo base_url("assets/shop/vendor/select2/css/select2.min.css") ?> ">
+	<link href="<?php echo base_url("assets/shop/css/style.css") ?> " rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div id="preloader">
-        <div class="sk-three-bounce">
-            <div class="sk-child sk-bounce1"></div>
-            <div class="sk-child sk-bounce2"></div>
-            <div class="sk-child sk-bounce3"></div>
-        </div>
-    </div>
-    <div id="main-wrapper">
-        <div class="nav-header">
+	<div id="preloader">
+		<div class="sk-three-bounce">
+			<div class="sk-child sk-bounce1"></div>
+			<div class="sk-child sk-bounce2"></div>
+			<div class="sk-child sk-bounce3"></div>
+		</div>
+	</div>
+	<div id="main-wrapper">
+		<div class="nav-header">
 			<a href="<?php echo base_url() ?>" class="w-100 text-center brand-logo">logo</a>
 
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
+			<div class="nav-control">
+				<div class="hamburger">
+					<span class="line"></span><span class="line"></span><span class="line"></span>
+				</div>
+			</div>
 		</div>
-		
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-                            <div class="dashboard_bar">
+		<!-- Sepetim -->
+		<!-- -->
+		<div class="header">
+			<div class="header-content">
+				<nav class="navbar navbar-expand">
+					<div class="collapse navbar-collapse justify-content-between">
+						<div class="header-left">
+							<div class="dashboard_bar">
 								Ürün detayları
-                            </div>
-                        </div>
+							</div>
+						</div>
 						<!-- Bildirim Kutusu -->
 						<?php require('navbar.php'); ?>
 						<!-- -->
-                    </div>
-                </nav>
-            </div>
-        </div>
+					</div>
+				</nav>
+			</div>
+		</div>
 
 		<div class="deznav">
             <div class="deznav-scroll">
@@ -62,7 +66,7 @@
 							<span class="nav-text">Site Adı</span>
 						</a>
 						<ul aria-expanded="false">
-                            <li><a href="<?php echo base_url("admin") ?>">Anasayfa</a></li>
+						<li><a href="<?php echo base_url("admin") ?>">Anasayfa</a></li>
                         </ul>
 					</li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -70,23 +74,19 @@
 							<span class="nav-text">Hesap Yönetimi</span>
 						</a>
                         <ul aria-expanded="false">
-                        <li><a href="<?php echo base_url("admin/createaccount") ?>">Hesap Oluştur</a></li>
-							<li><a href="<?php echo base_url("admin/allaccount") ?>">Tüm Hesaplar</a></li>
+						<li><a href="<?php echo base_url("admin/createaccount") ?>">Hesap Oluştur</a></li>							<li><a href="<?php echo base_url("admin/allaccount") ?>">Tüm Hesaplar</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li class="mm-active"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-presentation"></i>
 							<span class="nav-text">Ürün Yönetimi</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="<?php echo base_url("admin/addproduct")?>">Ürün Ekle</a></li>
-							<li><a href="<?php echo base_url("admin/productlist")?>">Eklenen Ürünler</a></li>
-							<li><a href="<?php echo base_url("admin/store")?>">Ürün Liste</a></li>
+							<li class="mm-active"><a href="<?php echo base_url("admin/addproduct") ?>" class="mm-active">Ürün Ekle</a></li>
+							<li><a href="<?php echo base_url("admin/productlist") ?>">Eklenen Ürünler</a></li><li><a href="<?php echo base_url("admin/store")?>">Ürün Liste</a></li>
                         </ul>
                     </li>
-     
-         
-                 
+
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-price-tag"></i>
 							<span class="nav-text">Sipariş Takip</span>
@@ -109,7 +109,7 @@
 							<span class="nav-text">Destek</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="<?php  echo base_url("admin/alltickets") ?>">Tüm Talepler</a></li>
+                            <li><a href="<?php echo base_url("admin/alltickets") ?>">Tüm Talepler</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -124,355 +124,405 @@
 			</div>
         </div>
 		<div class="content-body">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-							<?php
-							$fotograflar = explode(",",$urun[0]["fotograflar"]);
-							?>
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade show active" id="first">
-                                                <img class="img-fluid" src="<?php echo base_url($fotograflar[0]) ?>" alt="">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-body">
+								<?php
+								$fotograflar = explode(",", $urun[0]["fotograflar"]);
+								?>
+								<div class="row">
+									<div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
+										<div class="tab-content">
+											<div role="tabpanel" class="tab-pane fade show active" id="first">
+												<img class="img-fluid" src="<?php echo base_url($fotograflar[0]) ?>" alt="">
 												<?php
-											if($urun[0]["stoknp"]=="true"){
-												
-											}else{
-												echo '<span class="badge badge-danger sinirli-stok">Sınırlı stok</span>';
-											}
-											?>
-												
-                                            </div>
-                                        </div>
-                                        <div class="tab-slide-content new-arrival-product mb-4 mb-xl-0">
-                                            <!-- Nav tabs -->
-											<ul class="nav slide-item-list mt-3" role="tablist" id="lightgallery" >
+												if ($urun[0]["stoknp"] == "true") {
+												} else {
+													echo '<span class="badge badge-danger sinirli-stok">Sınırlı stok</span>';
+												}
+												?>
 
-												<?php 
-												foreach ($fotograflar as $foto){ ?>
- 													<a class="detay-lgl mb-2" href="<?php echo base_url($foto) ?>" data-exthumbimage="<?php echo base_url($foto) ?>" data-src="<?php echo base_url($foto) ?>" >
-                                                    	<img class="img-fluid" src="<?php echo base_url($foto) ?>" alt="" width="50">
-                                               		 </a>
+											</div>
+										</div>
+										<div class="tab-slide-content new-arrival-product mb-4 mb-xl-0">
+											<!-- Nav tabs -->
+											<ul class="nav slide-item-list mt-3" role="tablist" id="lightgallery">
+
+												<?php
+												foreach ($fotograflar as $foto) { ?>
+													<a class="detay-lgl mb-2" href="<?php echo base_url($foto) ?>" data-exthumbimage="<?php echo base_url($foto) ?>" data-src="<?php echo base_url($foto) ?>">
+														<img class="img-fluid" src="<?php echo base_url($foto) ?>" alt="" width="50">
+													</a>
 												<?php } ?>
-												
-                                               
-                                                
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!--Tab slider End-->
-                                    <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
-                                        <div class="product-detail-content">
-                                            <!--Product details-->
-                                            <div class="new-arrival-content pr">
-                                                <h4><?php echo $urun[0]["ad"] ?></h4>
-												<hr>
-                                                <div class="comment-review star-rating">
-													<ul>
-													<?php 
-													for($i = 0; $i < $urun[0]["yildiz"];$i++){
-														echo '<li><i class="fa fa-star"></i></li>';
-													}
 
-													for($i = 0; $i < (5 - $urun[0]["yildiz"] ) ;$i++){
-														echo '                                                    
+
+
+
+											</ul>
+										</div>
+									</div>
+									<!--Tab slider End-->
+									<div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
+										<div class="product-detail-content">
+											<!--Product details-->
+											<div class="new-arrival-content pr">
+												<h4><?php echo $urun[0]["ad"] ?></h4>
+												<hr>
+												<div class="comment-review star-rating">
+													<ul>
+														<?php
+														$ort = 5;
+														if ($yildizvarmi) {
+															$ort = 5;
+														} else {
+															$ort =  round((count($yildiz5) * 5 + count($yildiz4) * 4 + count($yildiz3) * 3 + count($yildiz2) * 2 + count($yildiz1) * 1) / (count($yildiz5) + count($yildiz4) + count($yildiz3) + count($yildiz2) + count($yildiz1)), 0);
+														}
+
+														for ($i = 0; $i < $ort; $i++) {
+															echo '<li><i class="fa fa-star"></i></li>';
+														}
+
+														for ($i = 0; $i < (5 - $ort); $i++) {
+															echo '                                                    
 														<li><i class="fa fa-star-o"></i></li>
 														';
-													}
-													?>
+														}
+														?>
 													</ul>
-													<span class="review-text">(<?php echo count($yorumlar) ?>) / </span><a class="product-review" href=""  data-toggle="modal" data-target="#reviewModal">Yorum yaz?</a>
+													<span class="review-text">(<?php echo count($yorumlar) ?>) / </span><a class="product-review" href="" data-toggle="modal" data-target="#reviewModal">Yorum yaz?</a>
 												</div>
 												<div class="d-table mb-2">
-													<p class="price float-left d-block" id="fiyat">€<?php echo $urun[0]["fiyat"] ?></p>
-                                                </div>
-                                                <p>Stok durumu: 
+													<p class="price float-left d-block">€ <span id="fiyat"><?php echo $urun[0]["fiyat"] ?></span></p>
+												</div>
+												<p>Stok durumu:
+													<?php
+													if ($urun[0]["stoknp"] == "true") {
+														echo '<span class="item text-success"> Stokta var <i class="fa fa-check-circle text-success"></i></span>';
+													} else {
+														echo '<span class="item text-danger"> Stokta ' . $urun[0]["stok"] . ' ürün kaldı <i class="fa  fa-exclamation-circle text-danger"></i></span>';
+													}
+													?></p>
 												<?php
-											if($urun[0]["stoknp"]=="true"){
-												echo '<span class="item text-success"> Stokta var <i class="fa fa-check-circle text-success"></i></span>';
-											}else{
-												echo '<span class="item text-danger"> Stokta '.$urun[0]["stok"].' ürün kaldı <i class="fa  fa-exclamation-circle text-danger"></i></span>';
-											}
-											?></p>
-											 <p>
-											 <?php
 
-												if($urun[0]["bekleme"] == "true"){
-													echo "Bekleme süresi: <span class='item text-success'>".$urun[0]["bekleme_suresi"]."</span>";
+												if ($urun[0]["bekleme"] == "true") {
+													echo "<p>Bekleme süresi: <span class='item text-success'>" . $urun[0]["bekleme_suresi"] . "</span></p>";
 												}
 
-											?>
-                                              
-                                            </p>
-                                                <p>Ürün kodu: <span class="item"><?php echo $urun[0]["urun_kodu"] ?></span> </p>
-                                            	<p>Marka: <span class="item"><?php echo $urun[0]["marka"]?> </span></p>
-                                               
-												<p>Ürün açıklaması: <span class="item"><?php echo $urun[0]["aciklama"]?></span></p>
-												<div class="filtaring-area mb-3">
-												<?php 
-													if($urun[0]["kategori"] != "urun-matras") { 
 												?>
-													<hr>
-													<p>Yatak boyutu: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
-														<span><div class="btn-group">
-																<button id="yatakboyuttitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																Lütfen seçim yapınız.
-																</button>
-																<div class="dropdown-menu" id="yatakboyutdown">
-																	<div class="dropdown-item" data-yatakboyut="120x200">120x200</div>
-																	<div class="dropdown-item" data-yatakboyut="120x210">120x210</div>
-																	<div class="dropdown-item" data-yatakboyut="120x220">120x220</div>
-																	<div class="dropdown-item" data-yatakboyut="140x200">140x200</div>
-																	<div class="dropdown-item" data-yatakboyut="140x210">140x210</div>
-																	<div class="dropdown-item" data-yatakboyut="140x220">140x220</div>
-																	<div class="dropdown-item" data-yatakboyut="160x200">160x200</div>
-																	<div class="dropdown-item" data-yatakboyut="160x210">160x210</div>
-																	<div class="dropdown-item" data-yatakboyut="160x220">160x220</div>
-																	<div class="dropdown-item" data-yatakboyut="180x200">180x200</div>
-																	<div class="dropdown-item" data-yatakboyut="180x210">180x210</div>
-																	<div class="dropdown-item" data-yatakboyut="180x220">180x220</div>
-																	<div class="dropdown-item" data-yatakboyut="200x200">200x200</div>
-																	<div class="dropdown-item" data-yatakboyut="200x210">200x210</div>
-																	<div class="dropdown-item" data-yatakboyut="200x220">200x220</div>
+												<p>Ürün kodu: <span class="item"><?php echo $urun[0]["urun_kodu"] ?></span> </p>
+												<p>Marka: <span class="item"><?php echo $urun[0]["marka"] ?> </span></p>
+
+												<p>Ürün açıklaması: <span class="item"><?php echo $urun[0]["aciklama"] ?></span></p>
+												<div class="filtaring-area mb-3">
+													<?php
+													if ($urun[0]["kategori"] != "urun-matras") {
+													?>
+														<hr>
+														<p>Yatak boyutu: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
+															<span>
+																<div class="btn-group">
+																	<button id="yatakboyuttitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+																		Lütfen seçim yapınız.
+																	</button>
+																	<div class="dropdown-menu" id="yatakboyutdown">
+																		<div class="dropdown-item" data-yatakboyut="120x200"><span class="badge badge-primary light">+€0</span> 120x200</div>
+																		<div class="dropdown-item" data-yatakboyut="120x210"><span class="badge badge-primary light">+€75</span> 120x210</div>
+																		<div class="dropdown-item" data-yatakboyut="120x220"><span class="badge badge-primary light">+€125</span> 120x220</div>
+																		<div class="dropdown-item" data-yatakboyut="140x200"><span class="badge badge-primary light">+€0</span> 140x200</div>
+																		<div class="dropdown-item" data-yatakboyut="140x210"><span class="badge badge-primary light">+€75</span> 140x210</div>
+																		<div class="dropdown-item" data-yatakboyut="140x220"><span class="badge badge-primary light">+€125</span> 140x220</div>
+																		<div class="dropdown-item" data-yatakboyut="160x200"><span class="badge badge-primary light">+€0</span> 160x200</div>
+																		<div class="dropdown-item" data-yatakboyut="160x210"><span class="badge badge-primary light">+€75</span> 160x210</div>
+																		<div class="dropdown-item" data-yatakboyut="160x220"><span class="badge badge-primary light">+€125</span> 160x220</div>
+																		<div class="dropdown-item" data-yatakboyut="180x200"><span class="badge badge-primary light">+€0</span> 180x200</div>
+																		<div class="dropdown-item" data-yatakboyut="180x210"><span class="badge badge-primary light">+€75</span> 180x210</div>
+																		<div class="dropdown-item" data-yatakboyut="180x220"><span class="badge badge-primary light">+€125</span> 180x220</div>
+																		<div class="dropdown-item" data-yatakboyut="200x200"><span class="badge badge-primary light">+€175</span> 200x200</div>
+																		<div class="dropdown-item" data-yatakboyut="200x210"><span class="badge badge-primary light">+€225</span> 200x210</div>
+																		<div class="dropdown-item" data-yatakboyut="200x220"><span class="badge badge-primary light">+€275</span> 200x220</div>
+																	</div>
 																</div>
-															</div>
-														</span>
-													</p>
-													<hr>
+															</span>
+														</p>
+														<hr>
 													<?php } ?>
 													<p>Kumaş seçimi: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
-														<span><div class="btn-group">
-																<button id="kumastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																Lütfen seçim yapınız.
-																</button>
+														<span>
+															<div class="btn-group">
+																<button id="kumastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Varsayılan</button>
 																<div class="dropdown-menu" id="kumasdown">
-																	<div class="dropdown-item" data-kumas="Amsterdam">Amsterdam</div>
-																	<div class="dropdown-item" data-kumas="Verona">Verona</div>
-																	<div class="dropdown-item" data-kumas="Riviera">Riviera</div>
-																	<div class="dropdown-item" data-kumas="Bravo">Bravo</div>
-																</div>
+																	<div class="dropdown-item" data-kumas="Varsayılan" data-fiyat="0"><span class="badge badge-primary light">+€0</span> Varsayılan</div>
+																	<div class="dropdown-item" data-kumas="Amsterdam" data-fiyat="0"><span class="badge badge-primary light">+€0</span> Amsterdam</div>
+																	<div class="dropdown-item" data-kumas="Verona" data-fiyat="0"><span class="badge badge-primary light">+€0</span> Verona</div>
+																	<div class="dropdown-item" data-kumas="Riviera" data-fiyat="75"><span class="badge badge-primary light">+€75</span> Riviera</div>
+																	<div class="dropdown-item" data-kumas="Bravo" data-fiyat="75"><span class="badge badge-primary light">+€75</span> Bravo</div>
+                									</div>
 															</div>
 														</span>
 													</p>
-                                                    <div class="size-filter">
+													<div class="size-filter">
 														<p>Kumaş renk kodu: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span></p>
 														<div class="input-group mb-3 input-success-o">
-                                            				<textarea id="val-renk" type="text" class="col-lg-6 col-xxl-6 col-xl-3 form-control" placeholder="Lütfen renk seçiminizi buraya yazınız." style="min-height: 30px;"></textarea>
-                                        				</div>
-                                                    </div>
+															<textarea id="val-renk" type="text" class="col-lg-6 col-xxl-6 col-xl-3 form-control" placeholder="Lütfen renk seçiminizi buraya yazınız." style="min-height: 30px;"></textarea>
+														</div>
+													</div>
 													<hr>
-                                                </div>
-
+												</div>
 												<div class="col-12 px-0">
 													<p>Matras: 
-														<span><div class="btn-group">
+													<?php if($urun[0]["kategori"] == "urun-matras" ) {?>
+														<span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
+													<?php }?>
+														<span>
+															<div class="btn-group">
 																<button id="matrastitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																Lütfen seçim yapınız.
+																	Lütfen seçim yapınız.
 																</button>
 																<div class="dropdown-menu" id="matrasdown">
-																
-																<?php if($urun[0]["matras"] == "Polyether Matras"){
-																	foreach ($polyetherMatras as $matras) {
-																		$f = explode("€",$matras["matras"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["matras"]?>
-																	</a>
-																<?php }} ?>
 
-																<?php if($urun[0]["matras"] == "Pocket Poly Matras"){
-																	foreach ($pocketPolyMatras as $matras) {
-																		$f = explode("€",$matras["matras"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["matras"]?>
-																	</a>
-																<?php }} ?>
+																	<?php
+																	if ($urun[0]["kategori"] == "urun-normal") {
+																	?>
+																		<a data-matras="Polyether Matras" class="dropdown-item" data-fiyat="">Polyether Matras</a>
+																		<a data-matras="Pocket Poly Matras" class="dropdown-item" data-fiyat="">Pocket Poly Matras</a>
+																		<a data-matras="Pocket HR Matras" class="dropdown-item" data-fiyat="">Pocket HR Matras</a>
+																		<a data-matras="HR Matras" class="dropdown-item" data-fiyat="">HR Matras</a>
+																		<a data-matras="Pocket HR 2x5" class="dropdown-item" data-fiyat="">Pocket HR 2x5</a>
+																	<?php } ?>
 
+																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Pocket HR 2x5") {
+																		foreach ($pocketHr25 as $matras) {
+																			$f = explode("€", $matras["matras"]);
+																	?>
+																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
+																				<span class="badge badge-primary light">+<?php
 
-																<?php if($urun[0]["matras"] == "Pocket HR Matras"){
-																	foreach ($pocketHrMatras as $matras) {
-																		$f = explode("€",$matras["matras"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["matras"]?>
-																	</a>
-																<?php }} ?>
+																															echo $f[1];
+																															?>€</span>
+																				&nbsp; <?php echo $matras["matras"] ?>
+																			</a>
+																	<?php }
+																	} ?>
 
 
-																<?php if($urun[0]["matras"] == "HR Matras"){
-																	foreach ($hrMatras as $matras) {
-																		$f = explode("€",$matras["matras"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["matras"]?>
-																	</a>
-																<?php }} ?>
+																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Polyether Matras") {
+																		foreach ($polyetherMatras as $matras) {
+																			$f = explode("€", $matras["matras"]);
+																	?>
+																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
+																				<span class="badge badge-primary light">+<?php
 
-																<?php if($urun[0]["matras"] == "Pocket HR 2x5"){
-																	foreach ($pocketHr25 as $matras) {
-																		$f = explode("€",$matras["matras"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["matras"]?>
-																	</a>
-																<?php }} ?>
-																	
-																	
+																															echo $f[1];
+																															?>€</span>
+																				&nbsp; <?php echo $matras["matras"] ?>
+																			</a>
+																	<?php }
+																	} ?>
+
+
+																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Pocket Poly Matras") {
+																		foreach ($pocketPolyMatras as $matras) {
+																			$f = explode("€", $matras["matras"]);
+																	?>
+																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
+																				<span class="badge badge-primary light">+<?php
+
+																															echo $f[1];
+																															?>€</span>
+																				&nbsp; <?php echo $matras["matras"] ?>
+																			</a>
+																	<?php }
+																	} ?>
+
+																	<!-- -->
+
+
+
+																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "Pocket HR Matras") {
+																		foreach ($pocketHrMatras as $matras) {
+																			$f = explode("€", $matras["matras"]);
+																	?>
+																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
+																				<span class="badge badge-primary light">+<?php
+
+																															echo $f[1];
+																															?>€</span>
+																				&nbsp; <?php echo $matras["matras"] ?>
+																			</a>
+																	<?php }
+																	} ?>
+
+
+
+
+																	<?php if ($urun[0]['kategori'] == "urun-matras" && $urun[0]["matras"] == "HR Matras") {
+																		foreach ($hrMatras as $matras) {
+																			$f = explode("€", $matras["matras"]);
+																	?>
+																			<a data-matras="<?php echo $matras["matras"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1] ?>">
+																				<span class="badge badge-primary light">+<?php
+
+																															echo $f[1];
+																															?>€</span>
+																				&nbsp; <?php echo $matras["matras"] ?>
+																			</a>
+																	<?php }
+																	} ?>
+
+
+
 																</div>
 															</div>
 														</span><br>
-														<label class="mt-2">
+														<label class="mt-2 mb-0">
 															<input type="checkbox" id="xx31">
 															<span>Matras kumaşlı olacaksa lütfen tıklayın <span class="badge badge-sm light badge-primary">+€50</span></span>
 														</label>
 													</p>
 
-													<p>Parça adet: 
-														<span><div class="btn-group">
-																<button id="parcatitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																Lütfen seçim yapınız.
-																</button>
-																<div class="dropdown-menu" id="parcadown">												
-																	<a class="dropdown-item">1 parça</a>
-																	<a class="dropdown-item">2 parça</a>
+													
+
+													<?php
+													if ($urun[0]["kategori"] == "urun-normal") { ?>
+													
+														<span id="smc" class="badge badge-sm light badge-success mt-0 mb-3">Seçilen: <span id="secilen-matras" ></span> </span>
+														<span id="lsc" class="badge badge-sm light badge-danger mt-0 mb-3">Lütfen seçim yapınız.</span>
+
+													<?php } ?>
+													
+
+
+													<?php
+													if ($urun[0]["kategori"] != "urun-matras") {
+													?>
+														<p>Parça adet:
+															<span>
+																<div class="btn-group">
+																	<button id="parcatitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+																		1 adet
+																	</button>
+																	<div class="dropdown-menu" id="parcadown">
+																		<a class="dropdown-item">1 parça</a>
+																		<a class="dropdown-item">2 parça</a>
+																	</div>
 																</div>
-															</div>
-														</span><br>
-													</p>
-													<hr>
-													<p>Topper: 
-														<span><div class="btn-group">
-																<button id="toppertitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																Lütfen seçim yapınız.
-																</button>
-																<div class="dropdown-menu" id="topperdown">
+															</span><br>
+														</p>
+														<hr>
+													<?php } ?>
 
 
-																	<?php if($urun[0]["topper"] == "Polyether Topper"){
-																	foreach ($polyetherTopper as $matras) {
-																		$f = explode("€",$matras["topper"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["topper"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["topper"]?>
-																	</a>
-																<?php }} ?>
+													<?php
+													if ($urun[0]["kategori"] != "urun-matras") {
+													?>
+														<p>Topper:
+															<span>
+																<div class="btn-group">
+																	<button id="toppertitle" class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+																		Lütfen seçim yapınız.
+																	</button>
+																	<div class="dropdown-menu" id="topperdown">
 
+																	<?php
+																	if ($urun[0]["kategori"] == "urun-normal") {
+																	?>
+																		<a data-matras="Polyether Topper" class="dropdown-item" data-fiyat="">Polyether Topper</a>
+																		<a data-matras="HR Topper" class="dropdown-item" data-fiyat="">HR Topper</a>
+																		<a data-matras="Nasa Topper" class="dropdown-item" data-fiyat="">Nasa Topper</a>
+																		
 
-																<?php if($urun[0]["topper"] == "Nasa Topper"){
-																	foreach ($nasaTopper as $matras) {
-																		$f = explode("€",$matras["topper"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["topper"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["topper"]?>
-																	</a>
-																<?php }} ?>
-
-																<?php if($urun[0]["topper"] == "HR Topper"){
-																	foreach ($hrTopper as $matras) {
-																		$f = explode("€",$matras["topper"]);
-																	?>																	
-																	<a data-matras="<?php echo $matras["topper"] ?>" class="dropdown-item" data-fiyat="<?php echo $f[1]?>">
-																	<span class="badge badge-primary light">+<?php
-																	
-																	echo $f[1];
-																	?>€</span>
-																	&nbsp; <?php echo $matras["topper"]?>
-																	</a>
-																<?php }} ?>
-																	
+																		<?php } ?>
+																	</div>
 																</div>
-															</div>
-														</span>
-													</p>
-													<hr>
-													<p>Voeteinde: 
-														<span><div class="btn-group">
-																<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-																Lütfen seçim yapınız.
-																</button>
-																<div class="dropdown-menu" id="vod">
-																	<label class="w-100"><div class="dropdown-item" >
-																		<input data-fiyat="225" type="checkbox" value="Dekenkist 125cm breed (+€225)">&nbsp; 
-																		<span class="badge badge-primary light">+€225</span>
-																		&nbsp; Dekenkist 125cm breed
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="305" type="checkbox" value="Dekenkist breedte bed (+€305)">&nbsp; 
-																		<span class="badge badge-primary light">+€305</span>
-																		&nbsp; Dekenkist breedte bed
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="205" type="checkbox" value="Voetenbank 125cm breed (+€205)">&nbsp; 
-																		<span class="badge badge-primary light">+€205</span>
-																		&nbsp; Voetenbank 125cm breed
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="225" type="checkbox" value="Voetenbank breedte bed (+€225)">&nbsp; 
-																		<span class="badge badge-primary light">+€225</span>
-																		&nbsp; Voetenbank breedte bed
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="525" type="checkbox" value="TV-lift vlak (+€525)">&nbsp; 
-																		<span class="badge badge-primary light">+€525</span>
-																		&nbsp; TV-lift vlak
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="625" type="checkbox" value="TV-lift patroon (+€625)">&nbsp; 
-																		<span class="badge badge-primary light">+€625</span>
-																		&nbsp; TV-lift patroon
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="180" type="checkbox" value="Voetbord Vlak (+€180)">&nbsp; 
-																		<span class="badge badge-primary light">+€180</span>
-																		&nbsp; Voetbord Vlak
-																	</div></label>
-																	<label class="w-100"><div class="dropdown-item">
-																		<input data-fiyat="305" type="checkbox" value="Voetbord Patroon (+€305)">&nbsp; 
-																		<span class="badge badge-primary light">+€305</span>
-																		&nbsp; Voetbord Patroon
-																	</div></label>
+															</span>
+														</p>
+
+														<?php
+													if ($urun[0]["kategori"] == "urun-normal") { ?>
+													
+														<span id="smc2" class="badge badge-sm light badge-success mt-0 mb-0">Seçilen: <span id="secilen-topper" ></span> </span>
+														<span id="lsc3" class="badge badge-sm light badge-danger mt-0 mb-0">Lütfen seçim yapınız.</span>
+
+													<?php } ?>
+													
+
+														<hr>
+														<p>Voeteinde:
+															<span>
+																<div class="btn-group">
+																	<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+																		Lütfen seçim yapınız.
+																	</button>
+																	<div class="dropdown-menu" id="vod">
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="225" type="checkbox" value="Dekenkist 125cm breed (+€225)">&nbsp;
+																				<span class="badge badge-primary light">+€225</span>
+																				&nbsp; Dekenkist 125cm breed
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="305" type="checkbox" value="Dekenkist breedte bed (+€305)">&nbsp;
+																				<span class="badge badge-primary light">+€305</span>
+																				&nbsp; Dekenkist breedte bed
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="205" type="checkbox" value="Voetenbank 125cm breed (+€205)">&nbsp;
+																				<span class="badge badge-primary light">+€205</span>
+																				&nbsp; Voetenbank 125cm breed
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="225" type="checkbox" value="Voetenbank breedte bed (+€225)">&nbsp;
+																				<span class="badge badge-primary light">+€225</span>
+																				&nbsp; Voetenbank breedte bed
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="525" type="checkbox" value="TV-lift vlak (+€525)">&nbsp;
+																				<span class="badge badge-primary light">+€525</span>
+																				&nbsp; TV-lift vlak
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="625" type="checkbox" value="TV-lift patroon (+€625)">&nbsp;
+																				<span class="badge badge-primary light">+€625</span>
+																				&nbsp; TV-lift patroon
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="180" type="checkbox" value="Voetbord Vlak (+€180)">&nbsp;
+																				<span class="badge badge-primary light">+€180</span>
+																				&nbsp; Voetbord Vlak
+																			</div>
+																		</label>
+																		<label class="w-100">
+																			<div class="dropdown-item">
+																				<input data-fiyat="305" type="checkbox" value="Voetbord Patroon (+€305)">&nbsp;
+																				<span class="badge badge-primary light">+€305</span>
+																				&nbsp; Voetbord Patroon
+																			</div>
+																		</label>
+																	</div>
 																</div>
-															</div>
-														</span>
-													</p>
+															</span>
+														</p> <?php } ?>
 													<hr>
-                                                </div>
+												</div>
 
 												<div class="col-12 px-0">
-													<p>Ürün adet seçimi: 
-														<span><div class="btn-group">
+													<p>Ürün adet seçimi: <span class="badge badge-xs light badge-danger" style="position: relative;top: -2px;">zorunlu</span>
+														<span>
+															<div class="btn-group">
 																<button class="btn btn-primary btn-sm dropdown-toggle" id="kac-adet" type="button" data-toggle="dropdown">
 																	Adet seçimi yapılmadı
 																</button>
@@ -485,13 +535,13 @@
 														</span>
 													</p>
 												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<!-- review -->
 					<div class="modal fade" id="reviewModal">
 						<div class="modal-dialog" role="document">
@@ -502,18 +552,18 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									<form action="<?php echo base_url("admin/yorumekle"); ?>" method="post">
+									<form action="<?php echo base_url("shopmanager/yorumekle/0"); ?>" method="post">
 										<div class="text-center mb-4">
-										<img class="img-fluid rounded" width="78" src="<?php echo base_url("assets/pp/".$user[0]["fotograf"]) ?>" >
+											<img class="img-fluid rounded" width="78" src="<?php echo base_url("assets/pp/" . $user[0]["fotograf"]) ?>">
 										</div>
 										<div class="form-group">
 											<div class="rating-widget mb-4 text-center">
-											<input type="hidden" id="star" name="star" value="5">
-											<input type="hidden" name="ad_soyad" value="<?php echo $user[0]["isim"]?>"> 
-											<input type="hidden" name="urun_id" value="<?php echo $id?>">
-											<input type="hidden" name="back" value="<?php echo $id?>">
-											<input type="hidden" name="foto" value="<?php echo $user[0]["fotograf"]?>">
-											
+												<input type="hidden" id="star" name="star" value="5">
+												<input type="hidden" name="ad_soyad" value="<?php echo $user[0]["isim"] ?>">
+												<input type="hidden" name="urun_id" value="<?php echo $id ?>">
+												<input type="hidden" name="back" value="<?php echo $id ?>">
+												<input type="hidden" name="foto" value="<?php echo $user[0]["fotograf"] ?>">
+												<!-- Rating Stars Box -->
 												<div class="rating-stars">
 													<ul id="stars">
 														<li class="star" title="Poor" data-value="1">
@@ -536,7 +586,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<textarea name="yorum" class="form-control" placeholder="Yorumunuz.." rows="5"></textarea>
+											<textarea name="yorum" class="form-control" placeholder="Yorumunuz..." rows="5"></textarea>
 										</div>
 										<button class="btn btn-success btn-block">PAYLAŞ</button>
 									</form>
@@ -544,70 +594,70 @@
 							</div>
 						</div>
 					</div>
-                </div>
-				
+				</div>
+			
 				<div class="row">
 					<div class="col-12">
-						<div class="row">	
+						<div class="row">
 							<div class="col-xl-12">
 								<div class="card">
 									<div class="card-header d-block pb-0 border-bottom">
 										<div class="d-sm-flex flex-wrap align-items-center d-block mb-md-3 mb-0">
 											<div class="mr-auto pr-3">
-												<h4 class="text-black fs-20"><?php echo $urun[0]["ad"];?> ürününe yapılan tüm yorumlar!</h4>
+												<h4 class="text-black fs-20"><?php echo $urun[0]["ad"]; ?> ürününe yapılan tüm yorumlar!</h4>
 												<p class="fs-13 mb-0 text-black">Ürün inceleme sayfasından sende ürünü değerlendirebilirsin!</p>
 											</div>
 										</div>
 									</div>
 									<div class="card-body">
 
-									<?php foreach($yorumlar as $yorum) {?>
-										<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
-											<img class="rounded mr-3 mb-md-0 mb-3" src="<?php echo base_url("assets/pp/".$yorum["fotograf"]) ?>" height="75" width="75">
-											<div class="media-body col-lg-12 pl-0">
-												<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Bu ürünü <?php echo $yorum["ad_soyad"] ?> değerlendirdi!</a></h6>
-												<p class="fs-14"><?php echo nl2br($yorum["yorum"]) ?></p>
+										<?php foreach ($yorumlar as $yorum) { ?>
+											<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+												<img class="rounded mr-3 mb-md-0 mb-3" src="<?php echo base_url("assets/pp/" . $yorum["fotograf"]) ?>" height="75" width="75">
+												<div class="media-body col-lg-12 pl-0">
+													<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Bu ürünü <?php echo $yorum["ad_soyad"] ?> değerlendirdi!</a></h6>
+													<p class="fs-14"><?php echo nl2br($yorum["yorum"]) ?></p>
 
-												<!-- ürünü satın aldıysa bu çıkacak -->
-												<?php
-												
-												if($yorum["durum"]=="almadi"){
-													echo '<span class="badge badge-sm light badge-danger mb-2">Ürünü satın almadı!</span>';
-												}else{
-													echo '<span class="badge badge-sm light badge-success mb-2">Ürünü satın aldı!</span>';
-												}
-												?>
-												
+													<!-- ürünü satın aldıysa bu çıkacak -->
+													<?php
 
-												<!-- ürünü satın ALMADOYSA bu çıkacak -->
-												<!-- BİLİYOZ AMK NE YAZION BURAYA -->
-
-												<div class="d-flex flex-wrap align-items-center">
-													<ul class="d-flex flex-wrap mb-sm-0 mb-2">
-														<li class="mb-2 mr-3 text-nowrap"><i class="las la-clock scale5 mr-2"></i><span class="fs-14 text-black text-nowrap font-w500"><?php echo $yorum["tarih"] ?></span></li>
-														
-														<li class="text-nowrap mb-2">
-														<?php 
-													for($i = 0; $i < $yorum["yildiz"];$i++){
-														echo '<li><i class="fa fa-star mr-2 scale5 text-warning"></i></li>';
-													}
-
-													for($i = 0; $i < (5 - $yorum["yildiz"] ) ;$i++){
-														echo '                                                    
-														<li><i class="fa fa-star-o mr-2 scale5 text-warning"></i></li>
-														';
+													if ($yorum["durum"] == "almadi") {
+														echo '<span class="badge badge-sm light badge-danger mb-2">Ürünü satın almadı!</span>';
+													} else {
+														echo '<span class="badge badge-sm light badge-success mb-2">Ürünü satın aldı!</span>';
 													}
 													?>
-													
-													</li>
-													
-													
-													</ul>
+
+
+													<!-- ürünü satın ALMADOYSA bu çıkacak -->
+													<!-- BİLİYOZ AMK NE YAZION BURAYA -->
+
+													<div class="d-flex flex-wrap align-items-center">
+														<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+															<li class="mb-2 mr-3 text-nowrap"><i class="las la-clock scale5 mr-2"></i><span class="fs-14 text-black text-nowrap font-w500"><?php echo $yorum["tarih"] ?></span></li>
+
+															<li class="text-nowrap mb-2">
+																<?php
+																for ($i = 0; $i < $yorum["yildiz"]; $i++) {
+																	echo '<li><i class="fa fa-star mr-2 scale5 text-warning"></i></li>';
+																}
+
+																for ($i = 0; $i < (5 - $yorum["yildiz"]); $i++) {
+																	echo '                                                    
+														<li><i class="fa fa-star-o mr-2 scale5 text-warning"></i></li>
+														';
+																}
+																?>
+
+															</li>
+
+
+														</ul>
+													</div>
 												</div>
 											</div>
-										</div>
-									<?php } ?>
-										
+										<?php } ?>
+
 									</div>
 								</div>
 							</div>
@@ -615,112 +665,375 @@
 					</div>
 
 				</div>
-            </div>
-        </div>
-		
-        <div class="footer">
-            <div class="copyright text-center">
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="copyright text-center">
 				<p><strong>Periwonen Yönetim Paneli</strong> © 2021 All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 	<script src="<?php echo base_url("assets/shop/vendor/global/global.min.js") ?> "></script>
 	<script src="<?php echo base_url("assets/shop/vendor/bootstrap-select/dist/js/bootstrap-select.min.js") ?> "></script>
-    <script src="<?php echo base_url("assets/shop/js/custom.min.js") ?> "></script>
+	<script src="<?php echo base_url("assets/shop/js/custom.min.js") ?> "></script>
 	<script src="<?php echo base_url("assets/shop/js/deznav-init.js") ?> "></script>
-    <script src="<?php echo base_url("assets/shop/vendor/highlightjs/highlight.pack.min.js") ?> "></script>
+	<script src="<?php echo base_url("assets/shop/vendor/highlightjs/highlight.pack.min.js") ?> "></script>
 	<script src="<?php echo base_url("assets/shop/vendor/star-rating/jquery.star-rating-svg.js") ?> "></script>
-    <script src="<?php echo base_url("assets/shop/vendor/lightgallery/js/lightgallery-all.min.js") ?> "></script>
+	<script src="<?php echo base_url("assets/shop/vendor/lightgallery/js/lightgallery-all.min.js") ?> "></script>
 	<script src="<?php echo base_url("assets/shop/vendor/select2/js/select2.full.min.js") ?> "></script>
-    <script src="<?php echo base_url("assets/shop/js/plugins-init/select2-init.js") ?> "></script>
-	
-	
+	<script src="<?php echo base_url("assets/shop/js/plugins-init/select2-init.js") ?> "></script>
 
+<script>
+	var fiyat = <?php echo $urun[0]["fiyat"]; ?>;
+		var e1 = 0;
+		var e2 = 0;
+		var e3 = 0;
+		var e4 = 0;
+		var e5 = 0;
+		var e7 = 1;
+		var e8 = 0;
+		var e9 = 0;
+		var e10 = 0;
+		var e11 = 0;
+		var ys = <?php if($urun[0]["kategori"] == "urun-matras" || $urun[0]["kategori"] == "urun-normal") {
+			echo "true";
+		}else{
+			"false";
+		} ?>;
+
+
+		function topla() {
+			return (fiyat + parseInt(e11) + parseInt(e1) + parseInt(e2) + parseInt(e3) + parseInt(e4) + parseInt(e5) + parseInt(e8) + parseInt(e9) + parseInt(e10))
+		}
+
+</script>
+	<?php if($urun[0]["kategori"] == "urun-matras") { ?> 													
+    <script>
+
+	
+	$("#matrasdown a").click(function(){
+	
+		e11 = $(this).attr("data-fiyat");
+		$("#fiyat").text(topla())
+	})
+	
+	</script>
+	<?php } ?>
 	<script>
-		$('#lightgallery').lightGallery({
-			loop:true,
-			thumbnail:true,
-			exThumbImage: 'data-exthumbimage'
-		});
+	
+		$("#smc").hide();
+		$("#smc2").hide();
+		var yatakBoyut = 0;
+		var boyutFiyat = 0;
+		var boyut2 = "0";
+		var boyut3 = "0";
+		var parca = 1;
+		var matras = "";
+
+		
 
 
-		$("li.star").click(function(){
-			$("#star").val($(this).attr("data-value"))
+		$("#yatakboyutdown .dropdown-item").click(function() {
+			$("#yatakboyuttitle").text($(this).text())
+			yatakBoyut = $(this).text()
+
+			boyutFiyat = $("#yatakboyuttitle").text().replace("+€", "").split(" ")[0]
+			boyut2 = $("#yatakboyuttitle").text().split(" ")[1]
+
+			console.log(`Fiyat: ${boyutFiyat}`)
+			console.log(`Boyut Size: ${boyut2}`)
+			e8 = $("#yatakboyuttitle").text().replace("+€", "").split(" ")[0]
+			$("#fiyat").text(topla())
+			ys = true;
+
+			$.get("<?php echo base_url("shopmanager/gettopper?topper=") ?>"+urun.topper,function(data){
+				console.log(JSON.parse(data))
+				const topperlar = [JSON.parse(data)];
+				if(boyut2 == "0"){
+					return
+				}
+				if(topperlar[0].length == 0){
+					$("#smc2").hide();
+					$("#lsc3").show();
+					
+				}else{
+					$("#smc2").show();
+					$("#lsc3").hide();
+				}
+				topperlar[0].map(function(val){
+					if(val.topper.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						console.log(val.topper);
+						secilenTopper = val.topper;
+						$("#secilen-topper").text(secilenTopper)
+						
+						
+					}
+				})
+
+			})
+
+			$.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
+                const matraslar = [JSON.parse(data)];
+				console.log(matraslar)
+				if(boyut2 == "0"){
+					return
+				}
+				if(matraslar[0].length == 0){
+					$("#smc").hide();
+					$("#lsc").show();
+					
+				}else{
+					$("#smc").show();
+					$("#lsc").hide();
+				}
+
+			
+				var selectedMatras = "";
+
+				
+
+				matraslar[0].map(function(val){
+					if(val.matras.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						if(parca == 1){
+							$("#secilen-matras").text(val.matras)
+							console.log("MATRAS FİYAT : " + val.matras.split("€")[1] )
+							e10 = val.matras.split("€")[1];
+							$("#fiyat").text(topla())
+						}
+
+						if(parca == 2){
+							$("#secilen-matras").text(
+							(parseInt(val.matras.split("x")[0]) / 2).toString()
+							+"x"+val.matras.split(" ")[0].split("x")[1] + " €"+
+							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
+							
+							)
+
+							e10 = val.matras.split("€")[1] * 2;
+							$("#fiyat").text(topla())
+						}
+						
+					}
+				})
+
+            })
+
+
+			
+
 		})
 
+		$("#parcadown .dropdown-item").click(function() {
+			$("#parcatitle").text($(this).text())
+			parca = parseInt($(this).text().split(" ")[0])
+			console.log(parca)
+			if(boyut2 == "0"){
+					return
+				}
+			if (parseInt(parca) == 1) {
+				console.log("1 PARÇA SEÇİLİ");
+			}
+
+
+			
+
+			$.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
+                const matraslar = [JSON.parse(data)];
+				console.log(matraslar)
+				if(boyut2 == "0"){
+					return
+				}
+				if(matraslar[0].length == 0){
+					$("#smc").hide();
+					$("#lsc").show();
+					
+				}else{
+					$("#smc").show();
+					$("#lsc").hide();
+				}
+
+			
+				var selectedMatras = "";
+
+				
+
+				matraslar[0].map(function(val){
+					if(val.matras.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						if(parca == 1){
+							$("#secilen-matras").text(val.matras)
+							console.log("MATRAS FİYAT : " + val.matras.split("€")[1] )
+							e10 = val.matras.split("€")[1];
+							$("#fiyat").text(topla())
+						}
+
+						if(parca == 2){
+							$("#secilen-matras").text(
+							(parseInt(val.matras.split("x")[0]) / 2).toString()
+							+"x"+val.matras.split(" ")[0].split("x")[1] + " €"+
+							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
+							
+							)
+
+							e10 = val.matras.split("€")[1] * 2;
+							$("#fiyat").text(topla())
+						}
+						
+					}
+				})
+
+            })
+
+		})
+
+
+		$('#lightgallery').lightGallery({
+			loop: true,
+			thumbnail: true,
+			exThumbImage: 'data-exthumbimage'
+		});
 		var vods = [];
 		var kumasSecim = false;
 		var matrasSecim = false;
 		var topperSecim = false;
-
-		var fiyat = <?php echo $urun[0]["fiyat"];?>;
-        var e1 = 0;
-        var e2 = 0;
-        var e3 = 0;
-        var e4 = 0;
-        var e5 = 0;
-        var e7 = 1;
-
-		function topla(){
-          return (fiyat + parseInt(e1) + parseInt(e2) + parseInt(e3) + parseInt(e4) + parseInt(e5)) * parseInt(e7) 
-        }
-
-
+		var secilenTopper;
+	
 		const urun = {}
-		
-		$("#kumasdown div").click(function(){
+		var matrasListe = [];
+
+		$("#kumasdown div").click(function() {
 			kumasSecim = true
 			$("#kumastitle").text($(this).attr("data-kumas"))
 			urun.kumastitle = $(this).attr("data-kumas");
+			console.log($(this).attr("data-fiyat"))
+			e9 = $(this).attr("data-fiyat");
+			$("#fiyat").text(topla())
 			
+
 		})
-		
-		$("#matrasdown a").click(function(){
+ 
+		$("#matrasdown a").click(function() {
 			matrasSecim = true;
 			$("#matrastitle").text($(this).attr("data-matras"))
 			urun.matras = $(this).attr("data-matras");
-			e1 = $(this).attr("data-fiyat")
-			$("#fiyat").text(topla())
-		})
-
-		$("#topperdown a").click(function(){
-			// urun.matras = $(this).attr("data-matras");
+			
+			matras = $(this).attr("data-matras");
+	
+			
+            $.get("<?php echo base_url("shopmanager/getmatras?matras=")?>"+matras,function(data){
+                const matraslar = [JSON.parse(data)];
+				console.log(matraslar)
+				if(boyut2 == "0"){
+					return
+				}
+				if(matraslar[0].length == 0){
+					$("#smc").hide();
+					$("#lsc").show();
+					
+				}else{
+					$("#smc").show();
+					$("#lsc").hide();
+				}
 
 			
+				var selectedMatras = "";
+
+				
+
+				matraslar[0].map(function(val){
+					if(val.matras.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						if(parca == 1){
+							$("#secilen-matras").text(val.matras)
+							console.log("MATRAS FİYAT : " + val.matras.split("€")[1] )
+							e10 = val.matras.split("€")[1];
+							$("#fiyat").text(topla())
+						}
+
+						if(parca == 2){
+							$("#secilen-matras").text(
+							(parseInt(val.matras.split("x")[0]) / 2).toString()
+							+"x"+val.matras.split(" ")[0].split("x")[1] + " €"+
+							(parseInt(val.matras.split("x")[1].split("€")[1]) * 2)
+							
+							)
+
+							e10 = val.matras.split("€")[1] * 2;
+							$("#fiyat").text(topla())
+						}
+						
+					}
+				})
+
+            })
+		})
+
+		$("#topperdown a").click(function() {
+			// urun.matras = $(this).attr("data-matras");
+
+
 			$("#toppertitle").text($(this).attr("data-matras"))
 			urun.topper = $(this).attr("data-matras");
 
-			e2 = $(this).attr("data-fiyat")
-			$("#fiyat").text(topla())
+
+			$.get("<?php echo base_url("shopmanager/gettopper?topper=") ?>"+urun.topper,function(data){
+				console.log(JSON.parse(data))
+				const topperlar = [JSON.parse(data)];
+				if(boyut2 == "0"){
+					return
+				}
+				if(topperlar[0].length == 0){
+					$("#smc2").hide();
+					$("#lsc3").show();
+					
+				}else{
+					$("#smc2").show();
+					$("#lsc3").hide();
+				}
+				topperlar[0].map(function(val){
+					if(val.topper.includes(boyut2)){
+						console.log("BULDUM BROOO")
+						console.log(val.topper);
+						secilenTopper = val.topper;
+						$("#secilen-topper").text(secilenTopper)
+						
+						
+					}
+				})
+
+			})
 
 		})
 
-		$("#xx31").change(function(){
-			if($(this).prop("checked")){
+		$("#xx31").change(function() {
+			if ($(this).prop("checked")) {
 				e3 = "50";
-			}else{
-				e3 = "0";				
+			} else {
+				e3 = "0";
 			}
 
 			$("#fiyat").text(topla())
 		})
 
-		$("#vod input").change(function(){
-			
-			
-			if($(this).prop("checked")){
-				e5 += parseInt($(this).attr("data-fiyat"))	
+		$("#vod input").change(function() {
+
+
+			if ($(this).prop("checked")) {
+				e5 += parseInt($(this).attr("data-fiyat"))
 				vods.push($(this).val())
 				$("#fiyat").text(topla())
 
-				
-			}else{
+
+			} else {
 				e5 -= $(this).attr("data-fiyat");
 				const index = vods.indexOf($(this).val());
 				$("#fiyat").text(topla())
 
 				if (index > -1) {
-  					vods.splice(index, 1);
+					vods.splice(index, 1);
 				}
 
 			}
@@ -728,9 +1041,105 @@
 
 		})
 
+		$("li.star").click(function() {
+			$("#star").val($(this).attr("data-value"))
+		})
 
 
 
+
+		$("#adetler a").click(function() {
+
+			$("#kac-adet").text($(this).attr("data-value") + " adet")
+			e7 = $(this).attr("data-value")
+			$("#fiyat").text(topla())
+
+			urun.adet = $(this).attr("data-value")
+		})
+
+		<?php
+		$fotograflar = explode(",", $urun[0]["fotograflar"]);
+		?>
+
+		<?php
+		$fotograflar = explode(",", $urun[0]["fotograflar"]);
+		?>
+
+		function ekle() {
+
+
+
+			urun.id = <?php echo $id; ?>;
+			urun.renk = $("#val-renk").val();
+			urun.resim = "<?php echo $fotograflar[0] ?>";
+
+			urun.ad = "<?php echo $urun[0]["ad"]; ?>";
+			urun.aciklama = "<?php echo $urun[0]["aciklama"]; ?>";
+			urun.marka = "<?php echo $urun[0]["marka"]; ?>";
+			urun.yorum = "<?php echo count($yorumlar); ?>";
+			urun.kumasRenkKodu = $("#val-renk").val()
+			urun.yatakboyutu = $("#yatakboyuttitle").text()
+
+
+			if (ys == false) {
+				alert("Boyut seçimi yapınız");
+				return;
+			}
+
+
+			if (urun.adet === null || urun.adet === undefined) {
+				alert("Adet seçimi yapınız");
+				return;
+			}
+
+			if($("#kumastitle").text() != "Varsayılan"){
+				if (!kumasSecim || $("#val-renk").val() == "" || $("#val-renk").val() == " ") {
+				alert("Renk seçimi yapınız");
+				return;
+			}
+			}
+			
+
+
+
+			var form = new FormData();
+			form.append("id", urun.id);
+			form.append("adet", urun.adet);
+			form.append("renk", urun.renk);
+			form.append("resim", urun.resim);
+			form.append("fiyat", $("#fiyat").text());
+			form.append("ad", urun.ad);
+			form.append("aciklama", urun.aciklama);
+			form.append("yorum", urun.yorum);
+			form.append("marka", urun.marka);
+
+			form.append("kumastitle", urun.kumastitle);
+			form.append("matras", urun.matras);
+			form.append("topper", urun.topper);
+			form.append("kumaslimi", $("#xx31").prop('checked'));
+			form.append("vods", vods);
+			form.append("yatakboyut", boyut2);
+			form.append("parca",parca);
+			form.append("matras_boyut",$("#secilen-matras").text());
+			form.append("topper_boyut",$("#secilen-topper").text());
+			form.append("kategori","<?php echo $urun[0]["kategori"] ?>");
+
+
+			$.ajax({
+				type: "POST",
+				url: "<?php echo base_url("shopmanager/sepetekle") ?>",
+				data: form,
+				processData: false,
+				contentType: false,
+				cache: false,
+
+				success: function(res) {
+
+					window.location.reload();
+				}
+			})
+
+		}
 	</script>
 
 </body>

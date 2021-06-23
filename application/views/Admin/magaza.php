@@ -197,15 +197,15 @@ transition: .3s !important;
 										</div>
 										<div class="card-action card-tabs mt-3 mt-sm-0 mb-4">
 											<ul class="nav nav-tabs" role="tablist">
-												<li class="nav-item">
-													<a class="nav-link active" data-toggle="tumUrunler" href="#tumUrunler" role="tab">Tümü</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" data-toggle="matrasUrunler" href="#matrasUrunler" role="tab">Matras</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" data-toggle="topperUrunler" href="#topperUrunler" role="tab">Topper</a>
-												</li>
+                                            <li class="nav-item">
+                                                        <a class="nav-link <?php if(isset($_GET["filtre"]) && $_GET["filtre"] == "all") { echo "active"; }  ?>" data-toggle="tumUrunler" href="<?php echo base_url("admin/store/?filtre=all") ?>" role="tab">Tümü</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link <?php if(isset($_GET["filtre"]) && $_GET["filtre"] == "matras") { echo "active"; } ?>" data-toggle="matrasUrunler" href="<?php echo base_url("admin/store/?filtre=matras") ?>" role="tab">Matras</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link <?php if(isset($_GET["filtre"]) && $_GET["filtre"] == "topper") { echo "active"; } ?>" data-toggle="topperUrunler" href="<?php echo base_url("admin/store/?filtre=topper") ?>" role="tab">Topper</a>
+                                                    </li>
 											</ul>
 										</div>
 									</div>
@@ -228,7 +228,15 @@ transition: .3s !important;
                                 <div class="row m-b-30">
                                     <div class="col-md-5 col-xxl-12">
                                         <div class="new-arrival-product mb-4 mb-xxl-4 mb-md-0">
-                                            <a href="<?php echo base_url("admin/productdetail/".$urun["id"]) ?>">
+                                            <a href="<?php 
+
+if($urun["kategori"] == "urun-topper")
+{
+    echo base_url("admin/topper/".$urun["id"]);
+}else{
+    echo base_url("admin/productdetail/".$urun["id"]);
+}
+?>">
 												<div class="new-arrivals-img-contnent">
                                                 	<img class="img-fluid" src="<?php echo base_url($kapak) ?>" alt="">
                                             	</div>
@@ -237,7 +245,15 @@ transition: .3s !important;
                                     </div>
                                     <div class="col-md-7 col-xxl-12">
                                         <div class="new-arrival-content position-relative">
-                                            <h4><a href="<?php echo base_url("admin/productdetail/".$urun["id"]) ?>"><?php echo $urun["ad"]; ?></a></h4>
+                                            <h4><a href="<?php 
+
+if($urun["kategori"] == "urun-topper")
+{
+    echo base_url("admin/topper/".$urun["id"]);
+}else{
+    echo base_url("admin/productdetail/".$urun["id"]);
+}
+?>"><?php echo $urun["ad"]; ?></a></h4>
                                             <div class="comment-review star-rating">
                                                 <ul>
 													<?php 

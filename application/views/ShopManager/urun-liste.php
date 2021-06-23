@@ -262,7 +262,15 @@
                                         </div>
                                         <div class="col-md-7 col-xxl-12">
                                             <div class="new-arrival-content position-relative">
-                                                <h4><a href="<?php echo base_url("shopmanager/productdetail/".$urun["id"]) ?>"><?php echo $urun["ad"]; ?></a></h4>
+                                                <h4><a href="<?php 
+
+if($urun["kategori"] == "urun-topper")
+{
+    echo base_url("shopmanager/topper/".$urun["id"]);
+}else{
+    echo base_url("shopmanager/productdetail/".$urun["id"]);
+}
+?>"><?php echo $urun["ad"]; ?></a></h4>
                                                 <div class="comment-review star-rating">
                                                     <ul>
                                                         

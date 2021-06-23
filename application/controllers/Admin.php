@@ -573,11 +573,76 @@ class Admin extends MyController
 
 	function store()
 	{
+
+		$listelencekUrunler = null;
+
+		if(!isset($_GET["filtre"])){
+			header("Location: ".base_url("admin/store/?filtre=all"));
+		}
+
+		if($_GET["filtre"] == "all"){
+			
+			$listelencekUrunler = $this->db->get("urunler")->result_array();
+		}
+
+		if($_GET["filtre"] == "matras"){
+			$listelencekUrunler = $this->db->where("kategori","urun-matras");
+			$listelencekUrunler = $this->db->get("urunler")->result_array();
+		}
+
+		if($_GET["filtre"] == "topper"){
+			$listelencekUrunler = $this->db->where("kategori","urun-topper");
+			$listelencekUrunler = $this->db->get("urunler")->result_array();
+		}
+
+	   
+		$yildiz = $this->db->get("yorumlar")->result_array();
+
+		$yildiz3 = [];
+		$yildiz2 = [];
+		$yildiz1 = [];
+		$yildiz4 = [];
+		$yildiz5 = [];
+		$yildizyok = false;
+		foreach($yildiz as $key=>$y){
+			
+
+			if($y["yildiz"]=="3"){
+				array_push($yildiz3,$y["yildiz"]);
+			}
+
+			if($y["yildiz"]=="2"){
+				array_push($yildiz2,$y["yildiz"]);
+			}
+
+			if($y["yildiz"]=="1"){
+				array_push($yildiz1,$y["yildiz"]);
+			}
+			if($y["yildiz"]=="4"){
+				array_push($yildiz4,$y["yildiz"]);
+			}
+			if($y["yildiz"]=="5"){
+				array_push($yildiz5,$y["yildiz"]);
+			}
+		}
+
+		if((count($yildiz1) + count($yildiz2) + count($yildiz3) + count($yildiz4) + count($yildiz5)) == 0){
+			$yildizyok = true;
+		}
+
+
+
 		$this->load->view('admin/magaza', [
 			"bildirimler" => $this->bildirimler,
 			"user" => $this->user,
-			"urunler" => $this->db->get("urunler")->result_array(),
-			"yorumlar" => $this->db->get("yorumlar")->result_array()
+			"urunler"=>$listelencekUrunler,
+                "yorumlar"=>$this->db->get("yorumlar")->result_array(),
+                "yildiz3"=>$yildiz3 ,
+                "yildiz2"=>$yildiz2 ,
+                "yildiz1"=>$yildiz1, 
+                "yildiz4"=>$yildiz4 ,
+                "yildiz5"=>$yildiz5 ,
+                "yildizvarmi"=>$yildizyok
 		]);
 	}
 
@@ -921,4 +986,86 @@ class Admin extends MyController
 		$this->db->where("id", $_POST["val-urunid"]);
 		$this->db->update("urunler");
 	}
+
+
+	public function topper($id){
+   
+
+		$urun = $this->db->where("id",$id);
+		$urun = $this->db->get("urunler")->result_array();
+
+		$yorumlar = $this->db->where("to_id",$id);
+		$yorumlar = $this->db->get("yorumlar")->result_array();
+
+	  
+
+
+		$polyetherTopper = $this->db->where("type","Polyether Topper");
+		$polyetherTopper = $this->db->get("topper")->result_array();
+
+		$nasaTopper  = $this->db->where("type","Nasa Topper");
+		$nasaTopper  = $this->db->get("topper")->result_array();
+
+		$hrTopper  = $this->db->where("type","HR Topper");
+		$hrTopper  = $this->db->get("topper")->result_array();
+
+  
+
+	   
+
+		$yildiz = $this->db->where("to_id",$id);
+		$yildiz = $this->db->get("yorumlar")->result_array();
+
+		$yildiz3 = [];
+		$yildiz2 = [];
+		$yildiz1 = [];
+		$yildiz4 = [];
+		$yildiz5 = [];
+		$yildizyok = false;
+		foreach($yildiz as $key=>$y){
+			if($y["yildiz"]=="3"){
+				array_push($yildiz3,$y["yildiz"]);
+			}
+
+			if($y["yildiz"]=="2"){
+				array_push($yildiz2,$y["yildiz"]);
+			}
+
+			if($y["yildiz"]=="1"){
+				array_push($yildiz1,$y["yildiz"]);
+			}
+			if($y["yildiz"]=="4"){
+				array_push($yildiz4,$y["yildiz"]);
+			}
+			if($y["yildiz"]=="5"){
+				array_push($yildiz5,$y["yildiz"]);
+			}
+		}
+
+		if((count($yildiz1) + count($yildiz2) + count($yildiz3) + count($yildiz4) + count($yildiz5)) == 0){
+			$yildizyok = true;
+		}
+
+	   
+	
+		
+		$this->load->view('admin/topper-detay',[
+			"bildirimler"=>$this->bildirimler,
+			"user"=>$this->user,
+			"urun"=>$urun,
+			"id"=>$id,
+			"yorumlar"=>$yorumlar,
+	 
+			"polyetherTopper"=>$polyetherTopper,
+			"nasaTopper"=>$nasaTopper,
+			"hrTopper"=>$hrTopper,
+			"yildiz3"=>$yildiz3 ,
+			"yildiz2"=>$yildiz2 ,
+			"yildiz1"=>$yildiz1, 
+			"yildiz4"=>$yildiz4 ,
+			"yildiz5"=>$yildiz5 ,
+			"yildizvarmi"=>$yildizyok
+		]);
+	}
+
 }

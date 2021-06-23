@@ -65,7 +65,7 @@
 							<span class="nav-text">Hesap Yönetimi</span>
 						</a>
                         <ul aria-expanded="false">
-<li><a href="<?php echo base_url("admin/createaccount") ?>">Hesap Oluştur</a></li>							<li><a href="<?php echo base_url("admin/allaccount") ?>">Tüm Hesaplar</a></li>
+						<li><a href="<?php echo base_url("admin/createaccount") ?>">Hesap Oluştur</a></li>							<li><a href="<?php echo base_url("admin/allaccount") ?>">Tüm Hesaplar</a></li>
                         </ul>
                     </li>
                     <li class="mm-active"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
